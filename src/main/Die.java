@@ -13,7 +13,8 @@ public class Die {
         return number;
     }
 
-    public void setNumber(int n) {
+    public void setNumber(int n) throws InvalidDieNumberException  {
+        if(n < 1 || n > 6) throw new InvalidDieNumberException("Invalid die number: " + n);
         number = n;
     }
 

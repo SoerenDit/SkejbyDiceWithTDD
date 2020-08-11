@@ -3,8 +3,10 @@ package main;
 public class Player {
     private int sips;
     private int beers;
+    private String name;
 
-    public Player() {
+    public Player(String name) {
+        this.name = name;
         sips = 0;
         beers = 0;
     }
@@ -28,5 +30,9 @@ public class Player {
 
     public Integer getNumberOfBeers() {
         return beers;
+    }
+
+    public String getName() {
+        return name;
     }
 }

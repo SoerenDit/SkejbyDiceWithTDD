@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/InvalidDieNumberException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Die.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Die.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestDie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +60,54 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestPlayer">
+  <component name="RunManager" selected="JUnit.TestDie">
+    <configuration name="TestDie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkejbyDiceWithTDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestDie" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDie.shouldRejectDieNumberToBeSetTo7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkejbyDiceWithTDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestDie" />
+      <option name="METHOD_NAME" value="shouldRejectDieNumberToBeSetTo7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDie.shouldReturnValidDieNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkejbyDiceWithTDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestDie" />
+      <option name="METHOD_NAME" value="shouldReturnValidDieNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
@@ -73,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPlayer.shouldIncreaseBeerByOneAndResetPlayerSipsToZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPlayer.shouldReturnPlayerName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
         <pattern>
@@ -83,55 +133,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.TestPlayer" />
-      <option name="METHOD_NAME" value="shouldIncreaseBeerByOneAndResetPlayerSipsToZero" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPlayer.shouldIncreaseBeerByOneAndResetPlayerSipsToZeroByDrinking16Sips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkejbyDiceWithTDD" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestPlayer" />
-      <option name="METHOD_NAME" value="shouldIncreaseBeerByOneAndResetPlayerSipsToZeroByDrinking16Sips" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPlayer.shouldIncreasePlayerSipByOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkejbyDiceWithTDD" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestPlayer" />
-      <option name="METHOD_NAME" value="shouldIncreasePlayerSipByOne" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPlayer.shouldIncreasePlayerSipsByOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkejbyDiceWithTDD" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestPlayer" />
-      <option name="METHOD_NAME" value="shouldIncreasePlayerSipsByOne" />
+      <option name="METHOD_NAME" value="shouldReturnPlayerName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestDie" />
+        <item itemvalue="JUnit.TestDie.shouldReturnValidDieNumber" />
+        <item itemvalue="JUnit.TestDie.shouldRejectDieNumberToBeSetTo7" />
         <item itemvalue="JUnit.TestPlayer" />
-        <item itemvalue="JUnit.TestPlayer.shouldIncreaseBeerByOneAndResetPlayerSipsToZeroByDrinking16Sips" />
-        <item itemvalue="JUnit.TestPlayer.shouldIncreaseBeerByOneAndResetPlayerSipsToZero" />
-        <item itemvalue="JUnit.TestPlayer.shouldIncreasePlayerSipsByOne" />
-        <item itemvalue="JUnit.TestPlayer.shouldIncreasePlayerSipByOne" />
+        <item itemvalue="JUnit.TestPlayer.shouldReturnPlayerName" />
       </list>
     </recent_temporary>
   </component>
@@ -177,22 +179,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597091705620" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1597130502338">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1597132209137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597130502338" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1597130502338">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597132209137" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1597132209137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597130502338" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1597130502338">
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597132209137" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1597132209137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597130502338" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1597130502338">
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597132209137" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1597132209137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597130502338" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597132209137" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

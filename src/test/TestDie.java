@@ -1,11 +1,13 @@
 package test;
 
 import main.Die;
+import main.InvalidDieNumberException;
 import org.junit.jupiter.api.*;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.closeTo;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestDie {
     private Die d;
@@ -16,9 +18,23 @@ public class TestDie {
     }
 
     @Test
-    public void shouldReturnDieNumber() {
+    public void shouldReturnValidDieNumber() throws InvalidDieNumberException {
         d.setNumber(4);
         assertThat(d.getNumber(), is(4));
+    }
+
+    @Test
+    public void shouldRejectDieNumberToBeSetTo7() {
+        InvalidDieNumberException theException =
+                assertThrows(InvalidDieNumberException.class, () -> d.setNumber(7));
+        assertThat(theException.getMessage(), containsString("Invalid die number: " + 7));
+    }
+
+    @Test
+    public void shouldRejectDieNumberToBeSetTo0() {
+        InvalidDieNumberException theException =
+                assertThrows(InvalidDieNumberException.class, () -> d.setNumber(0));
+        assertThat(theException.getMessage(), containsString("Invalid die number: " + 0));
     }
 
     @Test
@@ -44,5 +60,10 @@ public class TestDie {
         assertThat(min, is(1));
         assertThat(max, is(6));
     }
-
+/**
+ @Test public void shouldReturn5Sips() {
+ Die d2 = new Die();
+ d.setNumber();
+ }
+ **/
 }

@@ -14,7 +14,7 @@ public class TestPlayer {
 
     @BeforeEach
     public void setUp() {
-        p = new Player();
+        p = new Player("Søren");
     }
 
     @Test
@@ -45,5 +45,12 @@ public class TestPlayer {
         assertThat(p.getNumberOfBeers(), is(1));
         assertThat(p.getSips(),is(0));
     }
+
+    @Test
+    public void shouldReturnPlayerName() {
+        assertThat(p.getName(),is("Søren"));
+    }
+
+
 
 }
