@@ -1,4 +1,4 @@
-package main;
+package skejbydice.domain;
 
 public class Player {
     private int sips;

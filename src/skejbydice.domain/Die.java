@@ -1,4 +1,4 @@
-package main;
+package skejbydice.domain;
 
 import java.util.Random;
 

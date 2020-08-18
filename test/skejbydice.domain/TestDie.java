@@ -1,4 +1,4 @@
-package test;
+package skejbydice.domain;
 
 import main.Die;
 import main.InvalidDieNumberException;

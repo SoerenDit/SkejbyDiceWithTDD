@@ -1,4 +1,4 @@
-package test;
+package skejbydice.domain;
 
 import main.Player;
 import org.junit.jupiter.api.BeforeEach;
