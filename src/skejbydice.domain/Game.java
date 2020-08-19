@@ -1,18 +1,21 @@
 package skejbydice.domain;
 
+import java.util.ArrayList;
+
 public class Game {
-    private Player p;
+    private ArrayList<Player> players;
 
     public Game() {
-        p = new Player("Default");
-    }
-
-    public Player getPlayer() {
-        return p;
+        players = new ArrayList<Player>();
     }
 
 
     public void addPlayer(Player p) {
-        this.p = p;
+        players.add(p);
+    }
+
+
+    public Player getPlayer(int i) {
+        return players.get(i);
     }
 }

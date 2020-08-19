@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/skejbydice.domain/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice.domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice.domain/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice.domain/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,16 +97,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="skejbydice.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestDie" />
+      <option name="PACKAGE_NAME" value="skejbydice.domain" />
+      <option name="MAIN_CLASS_NAME" value="skejbydice.domain.TestGame" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,10 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestAll" />
+        <item itemvalue="JUnit.TestGame" />
         <item itemvalue="JUnit.TestGame.shouldAddPlayerAlphaToGame" />
         <item itemvalue="JUnit.TestPlayer" />
         <item itemvalue="JUnit.TestDie (1)" />
-        <item itemvalue="JUnit.TestDie" />
       </list>
     </recent_temporary>
   </component>
@@ -195,22 +195,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597748677649" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1597830819232">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1597831609829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1597830819232">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597831609829" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1597831609828">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1597830819232">
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597831609828" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1597831609828">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1597830819232">
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597831609828" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1597831609829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597831609829" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
