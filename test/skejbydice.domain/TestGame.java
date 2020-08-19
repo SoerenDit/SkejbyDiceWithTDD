@@ -2,35 +2,38 @@ package skejbydice.domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class TestGame {
-    private Game g;
+    private Game game;
+    private Player alpha;
+    private Player beta;
 
     @Before
     public void setUp() {
-        g = new Game();
-    }
+        game = new Game();
+        alpha = new Player("Alpha");
+        beta = new Player("Beta");
+        game.addPlayer(alpha);
+        game.addPlayer(beta);
 
-    @Test
-    public void shouldAddPlayerAlphaToGame() {
-        Player p = new Player("Alpha");
-        g.addPlayer(p);
-        assertThat(g.getPlayer(0), is(p));
     }
 
     @Test
     public void shouldAddTwoPlayersToGame() {
-        List<Player> players = new ArrayList<Player>();
-        Player alpha = new Player("Alpha");
-        Player beta = new Player("Beta");
-        g.addPlayer(alpha);
-        g.addPlayer(beta);
-        assertThat(g.getPlayer(0), is(alpha));
-        assertThat(g.getPlayer(1), is(beta));
+        assertThat(game.getPlayer(0), is(alpha));
+        assertThat(game.getPlayer(1), is(beta));
+    }
+
+    @Test
+    public void shouldReturnTheActivePlayer() {
+        assertThat(game.whoseTurnIsIt(),is(alpha));
+        game.nextPlayer();
+        assertThat(game.whoseTurnIsIt(),is(beta));
+        game.nextPlayer();
+        assertThat(game.whoseTurnIsIt(),is(alpha));
     }
 
 }
