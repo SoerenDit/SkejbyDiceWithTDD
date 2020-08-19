@@ -1,9 +1,12 @@
 package skejbydice.domain;
 
-import main.Player;
+import org.junit.*;
+import org.junit.Test;
+
+import skejbydice.domain.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
+
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -12,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class TestPlayer {
     Player p;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         p = new Player("Søren");
     }
