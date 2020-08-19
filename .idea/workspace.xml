@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/skejbydice.domain/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SkejbyDiceWithTDD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SkejbyDiceWithTDD.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice.domain/TestAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice.domain/TestDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestDie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice.domain/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +55,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/tdd-2020 (2)/tdd-iteration-3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="skejbydice.domain" />
       <recent name="main" />
     </key>
   </component>
@@ -113,17 +112,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDie.shouldReturnValidDieNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGame.shouldAddPlayerAlphaToGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="skejbydice.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestDie" />
-      <option name="METHOD_NAME" value="shouldReturnValidDieNumber" />
+      <option name="PACKAGE_NAME" value="skejbydice.domain" />
+      <option name="MAIN_CLASS_NAME" value="skejbydice.domain.TestGame" />
+      <option name="METHOD_NAME" value="shouldAddPlayerAlphaToGame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,10 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestAll" />
+        <item itemvalue="JUnit.TestGame.shouldAddPlayerAlphaToGame" />
         <item itemvalue="JUnit.TestPlayer" />
         <item itemvalue="JUnit.TestDie (1)" />
         <item itemvalue="JUnit.TestDie" />
-        <item itemvalue="JUnit.TestDie.shouldReturnValidDieNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -188,26 +187,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597091705620" />
+    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597830628331">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050@0.0.1920.1050" timestamp="1597830628331" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1597748677649">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597748677649" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1597748969064">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1597830819232">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597748969064" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1597748969064">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1597830819232">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597748969064" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1597748969064">
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1597830819232">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597748969064" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1597748969064">
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1597830819232">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597748969064" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597830819232" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

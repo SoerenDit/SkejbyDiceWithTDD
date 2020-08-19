@@ -7,7 +7,8 @@ import org.junit.Test;
 @RunWith ( Suite.class )
 @Suite.SuiteClasses(
         { TestDie.class,
-                TestPlayer.class} )
+                TestPlayer.class,
+                TestGame.class } )
 
 
 public class TestAll {
