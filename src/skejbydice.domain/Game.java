@@ -11,11 +11,9 @@ public class Game {
         currentPlayer = 0;
     }
 
-
     public void addPlayer(Player p) {
         players.add(p);
     }
-
 
     public Player getPlayer(int i) {
         return players.get(i);

@@ -35,5 +35,4 @@ public class TestGame {
         game.nextPlayer();
         assertThat(game.whoseTurnIsIt(),is(alpha));
     }
-
 }
