@@ -6,11 +6,8 @@ public class Game {
     private ArrayList<Player> players;
     private int currentPlayer;
     private gameState currentState;
-    private boolean shouldWePlayAnotherTurn = false;
-    private DiceManagerImp diceManagerImp;
-
-
-
+    private boolean isThisTheLastTurn = true;
+    private DiceManager diceManager;
 
     public enum gameState {
         idle,
@@ -82,13 +79,14 @@ public class Game {
     }
 
     private void onStartNextPlayersTurn() {
-        if(shouldWePlayAnotherTurn) {
+        if(isThisTheLastTurn) {
+            currentState = gameState.gameFinished;
+            gameFlow();
+        } else {
             nextPlayer();
             currentState = gameState.turnStarted;
             gameFlow();
-        } else {
-            currentState = gameState.gameFinished;
-            gameFlow();
+
         }
     }
 
