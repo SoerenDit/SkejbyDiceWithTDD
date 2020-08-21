@@ -9,7 +9,7 @@ import org.junit.runners.Suite;
                 TestLuckyDie.class,
                 TestPlayer.class,
                 TestGame.class,
-                TestDiceManager.class
+                TestAttack.class
                 } )
 
 
