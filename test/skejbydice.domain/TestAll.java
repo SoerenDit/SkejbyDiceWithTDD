@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
         { TestDie.class,
                 TestLuckyDie.class,
                 TestPlayer.class,
-                TestGame.class
+                TestGame.class,
+                TestDiceManager.class
                 } )
 
 

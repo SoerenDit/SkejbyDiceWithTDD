@@ -7,17 +7,10 @@ public class Game {
     private int currentPlayer;
     private gameState currentState;
     private boolean shouldWePlayAnotherTurn = false;
-    private Die attackingDie1;
-    private Die attackingDie2;
+    private DiceManager diceManager;
 
-    public int getSumOfAttackingDice() {
-        return attackingDie1.getNumber() + attackingDie2.getNumber();
-    }
 
-    public void setAttackingDice(int a, int b) throws InvalidDieNumberException {
-        attackingDie1.setNumber(a);
-        attackingDie2.setNumber(b);
-    }
+
 
     public enum gameState {
         idle,
@@ -34,8 +27,7 @@ public class Game {
     public Game() {
         players = new ArrayList<Player>();
         currentPlayer = 0;
-        attackingDie1 = new Die();
-        attackingDie2 = new Die();
+
         currentState = gameState.idle;
     }
 

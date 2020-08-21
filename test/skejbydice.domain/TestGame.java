@@ -36,11 +36,7 @@ public class TestGame {
         assertThat(game.whoseTurnIsIt(), is(alpha));
     }
 
-    @Test
-    public void shouldReturnTheSumOfTheAttackingDice() throws InvalidDieNumberException {
-        game.setAttackingDice(6,6);
-        assertThat(game.getSumOfAttackingDice(),is(12));
-    }
+
 
     @Test
     public void shouldReturnTheIdleState() {
