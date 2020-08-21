@@ -2,9 +2,6 @@ package skejbydice.domain;
 
 import org.junit.*;
 import org.junit.Test;
-import skejbydice.domain.Die;
-import skejbydice.domain.InvalidDieNumberException;
-import org.junit.jupiter.api.*;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -12,11 +9,11 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestDie {
-    private Die d;
+    private FakeDie d;
 
     @Before
     public void setUp() {
-        d = new Die();
+        d = new FakeDie();
     }
 
     @Test
