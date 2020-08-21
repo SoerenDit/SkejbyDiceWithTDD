@@ -34,47 +34,55 @@ public class Game {
     //****************** Game Flow ********************//
     private void gameFlow() {
         switch (currentState) {
-            case start: onGameStarted();
-            case turnStarted: onTurnStarted();
-            case aboutToRollAttackingDice: onRollAttackingDice();
-            case aboutToChosePlayerToAttack: onChosePlayerToAttack();
-            case aboutToRollDefendingDie: onRollDefendingDie();
-            case aboutToPunishLosingPlayer: onPunishLosingPlayer();
-            case aboutToStartNextPlayersTurn: onStartNextPlayersTurn();
-            case gameFinished: onGameFinished();
+            case start: onGameStarted(); break;
+            case turnStarted: onTurnStarted(); break;
+            case aboutToRollAttackingDice: onRollAttackingDice(); break;
+            case aboutToChosePlayerToAttack: onChosePlayerToAttack(); break;
+            case aboutToRollDefendingDie: onRollDefendingDie(); break;
+            case aboutToPunishLosingPlayer: onPunishLosingPlayer(); break;
+            case aboutToStartNextPlayersTurn: onStartNextPlayersTurn(); break;
+            case gameFinished: onGameFinished(); break;
         }
     }
 
     private void onGameStarted() {
         currentState = gameState.turnStarted;
+        gameFlow();
     }
 
     private void onTurnStarted() {
         currentState = gameState.aboutToRollAttackingDice;
+        gameFlow();
     }
 
     private void onRollAttackingDice() {
         currentState = gameState.aboutToChosePlayerToAttack;
+        gameFlow();
     }
 
     private void onChosePlayerToAttack() {
         currentState = gameState.aboutToRollDefendingDie;
+        gameFlow();
     }
 
     private void onRollDefendingDie() {
         currentState = gameState.aboutToPunishLosingPlayer;
+        gameFlow();
     }
 
     private void onPunishLosingPlayer() {
         currentState = gameState.aboutToStartNextPlayersTurn;
+        gameFlow();
     }
 
     private void onStartNextPlayersTurn() {
         if(shouldWePlayAnotherTurn) {
             nextPlayer();
             currentState = gameState.turnStarted;
+            gameFlow();
         } else {
             currentState = gameState.gameFinished;
+            gameFlow();
         }
     }
 
