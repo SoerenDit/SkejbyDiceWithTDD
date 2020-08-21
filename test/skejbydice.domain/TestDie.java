@@ -9,11 +9,11 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestDie {
-    private FakeDie d;
+    private Die d;
 
     @Before
     public void setUp() {
-        d = new FakeDie();
+        d = new Die();
     }
 
     @Test

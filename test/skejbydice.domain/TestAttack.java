@@ -7,29 +7,29 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class TestAttack {
-    DiceManagerImpForTest diceManagerImpForTest;
+    DiceManagerImp diceManagerImp;
 
     @Before
     public void setUp() {
-        diceManagerImpForTest = new DiceManagerImpForTest();
+        diceManagerImp = new DiceManagerImp();
     }
 
     @Test
     public void shouldReturnTheSumOfTheAttackingDice() throws InvalidDieNumberException {
-        diceManagerImpForTest.setAttackingDice(6,6);
-        assertThat(diceManagerImpForTest.getSumOfAttackingDice(),is(12));
+        diceManagerImp.setAttackingDice(6,6);
+        assertThat(diceManagerImp.getSumOfAttackingDice(),is(12));
     }
 
     @Test
     public void shouldReturnThatRollingA3AndA5Gives4Sips() throws InvalidDieNumberException {
-        diceManagerImpForTest.setAttackingDice(3,5);
-        assertThat(diceManagerImpForTest.getNumberOfSipsToGiveAway(),is(4));
+        diceManagerImp.setAttackingDice(3,5);
+        assertThat(diceManagerImp.getNumberOfSipsToGiveAway(),is(4));
     }
 
     @Test
     public void shouldReturnThatRollingA3AndA6Gives4Sips() throws InvalidDieNumberException {
-        diceManagerImpForTest.setAttackingDice(3,6);
-        assertThat(diceManagerImpForTest.getNumberOfSipsToGiveAway(),is(4));
+        diceManagerImp.setAttackingDice(3,6);
+        assertThat(diceManagerImp.getNumberOfSipsToGiveAway(),is(4));
     }
 
 }
