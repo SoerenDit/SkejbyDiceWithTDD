@@ -37,7 +37,13 @@ public class TestGame {
     }
 
     @Test
-    public void shouldReturnTheGameStartedState() {
+    public void shouldReturnTheSumOfTheAttackingDice() throws InvalidDieNumberException {
+        game.setAttackingDice(6,6);
+        assertThat(game.getSumOfAttackingDice(),is(12));
+    }
+
+    @Test
+    public void shouldReturnTheIdleState() {
         assertThat(game.getCurrentState(), is(Game.gameState.idle));
     }
 

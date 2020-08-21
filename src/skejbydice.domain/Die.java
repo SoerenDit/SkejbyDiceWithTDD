@@ -18,4 +18,9 @@ public class Die {
         number = rand.nextInt(6)+1;
     }
 
+    public void setNumber(int n) throws InvalidDieNumberException  {
+        if(n < 1 || n > 6) throw new InvalidDieNumberException("Invalid die number: " + n);
+        number = n;
+    }
+
 }
