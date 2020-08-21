@@ -7,7 +7,7 @@ public class Game {
     private int currentPlayer;
     private gameState currentState;
     private boolean shouldWePlayAnotherTurn = false;
-    private DiceManager diceManager;
+    private DiceManagerImp diceManagerImp;
 
 
 
