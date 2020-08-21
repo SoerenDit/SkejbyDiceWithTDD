@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+
 public class TestGame {
     private Game game;
     private Player alpha;
@@ -18,7 +19,6 @@ public class TestGame {
         beta = new Player("Beta");
         game.addPlayer(alpha);
         game.addPlayer(beta);
-
     }
 
     @Test
@@ -29,10 +29,27 @@ public class TestGame {
 
     @Test
     public void shouldReturnTheActivePlayer() {
-        assertThat(game.whoseTurnIsIt(),is(alpha));
+        assertThat(game.whoseTurnIsIt(), is(alpha));
         game.nextPlayer();
-        assertThat(game.whoseTurnIsIt(),is(beta));
+        assertThat(game.whoseTurnIsIt(), is(beta));
         game.nextPlayer();
-        assertThat(game.whoseTurnIsIt(),is(alpha));
+        assertThat(game.whoseTurnIsIt(), is(alpha));
     }
+
+    @Test
+    public void shouldReturnTheGameStartedState() {
+        assertThat(game.getCurrentState(), is(Game.gameState.idle));
+    }
+
+    @Test
+    public void shouldReachTheGameEndedState() {
+        game.start();
+        assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
+    }
+
+
+
+
 }
+
+
