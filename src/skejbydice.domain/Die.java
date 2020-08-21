@@ -1,7 +1,21 @@
 package skejbydice.domain;
 
-public interface Die {
-    public void roll();
+import java.util.Random;
 
-    public int getNumber();
+public class Die {
+    protected int number;
+
+    public Die() {
+        number = 1;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void roll() {
+        Random rand = new Random();
+        number = rand.nextInt(6)+1;
+    }
+
 }
