@@ -24,8 +24,8 @@ public class Game {
         gameFinished
     }
 
-    public Game(boolean testing, ChosePlayerStrategy chosePlayerStrategy) {
-        this.testing = testing;
+    public Game(ChosePlayerStrategy chosePlayerStrategy) {
+
         players = new ArrayList<Player>();
         currentPlayer = 0;
         diceManager = new DiceManager();
@@ -33,7 +33,8 @@ public class Game {
         this.chosePlayerStrategy = chosePlayerStrategy;
     }
 
-    public void start() {
+    public void start(boolean testing) {
+        this.testing = testing;
         currentState = gameState.start;
         gameFlow();
     }

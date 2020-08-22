@@ -16,14 +16,14 @@ public class TestGame {
     public void setUp() {
         alpha = new Player("Alpha");
         beta = new Player("Beta");
-        game = new Game(true, new ChoseTheSamePlayerAlways(beta));
+        game = new Game(new ChoseTheSamePlayerAlways(beta));
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
 
     @Test
     public void shouldReachTheGameEndedState() {
-        game.start();
+        game.start(true);
         assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
     }
 
@@ -44,7 +44,7 @@ public class TestGame {
 
     @Test
     public void shouldReturnThePlayerUnderAttack() {
-        game.start();
+        game.start(false);
         assertThat(game.getPlayerUnderAttack(), is(beta));
     }
 
