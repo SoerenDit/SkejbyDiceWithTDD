@@ -22,15 +22,15 @@ public class Game {
         gameFinished
     }
 
-    public Game() {
+    public Game(boolean testing) {
+        this.testing = testing;
         players = new ArrayList<Player>();
         currentPlayer = 0;
         diceManager = new DiceManager();
         currentState = gameState.idle;
     }
 
-    public void start(boolean testing) {
-        this.testing = testing;
+    public void start() {
         currentState = gameState.start;
         gameFlow();
     }

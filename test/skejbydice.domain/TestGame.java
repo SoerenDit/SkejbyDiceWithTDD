@@ -14,7 +14,7 @@ public class TestGame {
 
     @Before
     public void setUp() {
-        game = new Game();
+        game = new Game(true);
         alpha = new Player("Alpha");
         beta = new Player("Beta");
         game.addPlayer(alpha);
@@ -23,7 +23,7 @@ public class TestGame {
 
     @Test
     public void shouldReachTheGameEndedState() {
-        game.start(true);
+        game.start();
         assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
     }
 
