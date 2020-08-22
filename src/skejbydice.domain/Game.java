@@ -7,6 +7,7 @@ public class Game {
     private int currentPlayer;
     private gameState currentState;
     private boolean isThisTheLastTurn = true;
+    private boolean testing; //Only for testing purposes
     private DiceManager diceManager;
 
     public enum gameState {
@@ -24,11 +25,12 @@ public class Game {
     public Game() {
         players = new ArrayList<Player>();
         currentPlayer = 0;
-
+        diceManager = new DiceManager();
         currentState = gameState.idle;
     }
 
-    public void start() {
+    public void start(boolean testing) {
+        this.testing = testing;
         currentState = gameState.start;
         gameFlow();
     }
@@ -48,37 +50,46 @@ public class Game {
     }
 
     private void onGameStarted() {
+        print("Game started");
         currentState = gameState.turnStarted;
         gameFlow();
     }
 
     private void onTurnStarted() {
+        print("Turn started");
         currentState = gameState.aboutToRollAttackingDice;
         gameFlow();
     }
 
     private void onRollAttackingDice() {
-
+        print("Roll attacking dice");
+        diceManager.rollAttackingDice();
+        print("Attacking dice: " + diceManager.getAttackingDiceNumbers());
+        print("This is the first attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
         currentState = gameState.aboutToChosePlayerToAttack;
         gameFlow();
     }
 
     private void onChosePlayerToAttack() {
+        print("Chose player to attack");
         currentState = gameState.aboutToRollDefendingDie;
         gameFlow();
     }
 
     private void onRollDefendingDie() {
+        print("Roll defending die");
         currentState = gameState.aboutToPunishLosingPlayer;
         gameFlow();
     }
 
     private void onPunishLosingPlayer() {
+        print("Punish losing player");
         currentState = gameState.aboutToStartNextPlayersTurn;
         gameFlow();
     }
 
     private void onStartNextPlayersTurn() {
+        print("Start next players turn");
         if(isThisTheLastTurn) {
             currentState = gameState.gameFinished;
             gameFlow();
@@ -91,10 +102,15 @@ public class Game {
     }
 
     private void onGameFinished() {
+        print("Game finished");
     }
 
 
     // Helper methods
+
+    private void print(String s) {
+        if(testing) System.out.println(s);
+    }
 
     public void addPlayer(Player p) {
         players.add(p);

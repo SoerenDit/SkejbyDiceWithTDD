@@ -22,6 +22,12 @@ public class TestGame {
     }
 
     @Test
+    public void shouldReachTheGameEndedState() {
+        game.start(true);
+        assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
+    }
+
+    @Test
     public void shouldAddTwoPlayersToGame() {
         assertThat(game.getPlayer(0), is(alpha));
         assertThat(game.getPlayer(1), is(beta));
@@ -43,11 +49,7 @@ public class TestGame {
         assertThat(game.getCurrentState(), is(Game.gameState.idle));
     }
 
-    @Test
-    public void shouldReachTheGameEndedState() {
-        game.start();
-        assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
-    }
+
 
 
 

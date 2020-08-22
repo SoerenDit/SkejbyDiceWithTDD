@@ -4,9 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
-public class TestAttack {
+public class TestAttackAndDefence {
     DiceManager diceManager;
 
     @Before
@@ -38,6 +38,20 @@ public class TestAttack {
         diceManager.setAttackingDice(3,6);
         assertThat(diceManager.getNumberOfSipsToGiveAway(),is(5));
 
+    }
+
+    @Test
+    public void rollingA6ShouldDefendYouFrom3And6Attack() throws InvalidDieNumberException {
+        diceManager.setAttackingDice(3,6);
+        diceManager.setDefendingDie(6);
+        assertTrue(diceManager.isDefenceSuccesful());
+    }
+
+    @Test
+    public void rollingA5ShouldNotDefendYouFrom3And6Attack() throws InvalidDieNumberException {
+        diceManager.setAttackingDice(3,6);
+        diceManager.setDefendingDie(5);
+        assertFalse(diceManager.isDefenceSuccesful());
     }
 
 }
