@@ -42,6 +42,11 @@ public class TestGame {
         assertThat(game.whoseTurnIsIt(), is(alpha));
     }
 
+    @Test
+    public void shouldReturnThePlayerUnderAttack() {
+        game.start();
+        assertThat(game.getPlayerUnderAttack(), is(beta));
+    }
 
 
     @Test

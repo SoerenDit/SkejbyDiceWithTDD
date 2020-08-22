@@ -9,6 +9,8 @@ public class Game {
     private boolean isThisTheLastTurn = true;
     private boolean testing; //Only for testing purposes
     private DiceManager diceManager;
+    private ChosePlayerStrategy chosePlayerStrategy;
+    private Player playerUnderAttack;
 
     public enum gameState {
         idle,
@@ -28,6 +30,7 @@ public class Game {
         currentPlayer = 0;
         diceManager = new DiceManager();
         currentState = gameState.idle;
+        this.chosePlayerStrategy = chosePlayerStrategy;
     }
 
     public void start() {
@@ -72,6 +75,8 @@ public class Game {
 
     private void onChosePlayerToAttack() {
         print("Chose player to attack");
+        playerUnderAttack = chosePlayerStrategy.chosePlayer();
+        print("Player under attack is: " + playerUnderAttack.getName());
         currentState = gameState.aboutToRollDefendingDie;
         gameFlow();
     }
@@ -131,5 +136,9 @@ public class Game {
 
     public Object getCurrentState() {
         return currentState;
+    }
+
+    public Player getPlayerUnderAttack() {
+        return playerUnderAttack;
     }
 }
