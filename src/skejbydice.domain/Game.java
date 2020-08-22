@@ -22,7 +22,7 @@ public class Game {
         gameFinished
     }
 
-    public Game(boolean testing) {
+    public Game(boolean testing, ChosePlayerStrategy chosePlayerStrategy) {
         this.testing = testing;
         players = new ArrayList<Player>();
         currentPlayer = 0;

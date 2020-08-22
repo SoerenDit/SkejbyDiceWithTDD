@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="" />
+    <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/skejbydice.domain/ChosePlayerStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skejbydice.domain/ChosePlayerWithClickStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/skejbydice.domain/ChoseTheSamePlayerAlways.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestChosePlayerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice.domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice.domain/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice.domain/TestAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice.domain/TestAll.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,18 +190,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="99" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1597747437916" />
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1598023988978">
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1598085869514">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598023988978" />
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598085869514" />
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1597091705620">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597091705620" />
-    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1598022524117">
+    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1598086095536">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050@0.0.1920.1050" timestamp="1598022524117" />
+    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050@0.0.1920.1050" timestamp="1598086095536" />
     <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598025648955">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -207,22 +214,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1597748677649" />
-    <state width="1877" height="323" key="GridCell.Tab.0.bottom" timestamp="1598085044729">
+    <state width="1877" height="339" key="GridCell.Tab.0.bottom" timestamp="1598085447107">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598085044729" />
-    <state width="1877" height="323" key="GridCell.Tab.0.center" timestamp="1598085044729">
+    <state width="1877" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598085447107" />
+    <state width="1877" height="339" key="GridCell.Tab.0.center" timestamp="1598085447107">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598085044729" />
-    <state width="1877" height="323" key="GridCell.Tab.0.left" timestamp="1598085044729">
+    <state width="1877" height="339" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598085447107" />
+    <state width="1877" height="339" key="GridCell.Tab.0.left" timestamp="1598085447107">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598085044729" />
-    <state width="1877" height="323" key="GridCell.Tab.0.right" timestamp="1598085044729">
+    <state width="1877" height="339" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598085447107" />
+    <state width="1877" height="339" key="GridCell.Tab.0.right" timestamp="1598085447107">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598085044729" />
+    <state width="1877" height="339" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598085447107" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
                 TestLuckyDie.class,
                 TestPlayer.class,
                 TestGame.class,
-                TestAttackAndDefence.class
+                TestAttackAndDefence.class,
+                TestChosePlayerStrategy.class
                 } )
 
 

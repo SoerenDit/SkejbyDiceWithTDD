@@ -14,9 +14,9 @@ public class TestGame {
 
     @Before
     public void setUp() {
-        game = new Game(true);
         alpha = new Player("Alpha");
         beta = new Player("Beta");
+        game = new Game(true, new ChoseTheSamePlayerAlways(beta));
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
