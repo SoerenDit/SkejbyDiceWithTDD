@@ -1,13 +1,13 @@
 package skejbydice.domain;
 
 public class DiceManager {
-    private Die attackingDie1;
-    private Die attackingDie2;
-    private Die defendingDie;
+    private RegularDie attackingDie1;
+    private RegularDie attackingDie2;
+    private RegularDie defendingDie;
     private boolean isItFirstAttackingRollThisRound = true;
 
 
-    public DiceManager(Die attackingDie1, Die attackingDie2, Die defendingDie) {
+    public DiceManager(RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         this.attackingDie1 = attackingDie1;
         this.attackingDie2 = attackingDie2;
         this.defendingDie = defendingDie;

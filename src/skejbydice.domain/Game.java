@@ -24,8 +24,7 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategy chosePlayerStrategy, Die attackingDie1, Die attackingDie2, Die defendingDie) {
-
+    public Game(ChosePlayerStrategy chosePlayerStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         players = new ArrayList<Player>();
         currentPlayer = 0;
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);

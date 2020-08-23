@@ -1,6 +1,5 @@
 package skejbydice.domain;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -47,7 +46,7 @@ public class TestAttackAndDefence {
     }
 
     // Helper method to create a die with a fixed number
-    private Die die(int i) throws InvalidDieNumberException {
-        return new Die(new FixedNumberRollStrategy(i));
+    private RegularDie die(int i) throws InvalidDieNumberException {
+        return new RegularDie(new FixedNumberRollStrategy(i));
     }
 }

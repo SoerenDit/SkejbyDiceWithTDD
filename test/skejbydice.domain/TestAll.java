@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 
 @RunWith ( Suite.class )
 @Suite.SuiteClasses(
-        { TestDie.class,
+        { TestRegularDie.class,
                 TestLuckyDie.class,
                 TestPlayer.class,
                 TestGame.class,

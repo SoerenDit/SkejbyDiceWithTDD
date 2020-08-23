@@ -16,7 +16,7 @@ public class TestGame {
     public void setUp() {
         alpha = new Player("Alpha");
         beta = new Player("Beta");
-        Die randomDie = new Die(new RandomRollStrategy());
+        RegularDie randomDie = new RegularDie(new RandomRollStrategy());
         game = new Game(new ChoseTheSamePlayerAlways(beta), randomDie, randomDie, randomDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
