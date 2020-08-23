@@ -7,10 +7,10 @@ public class LuckyDie extends Die {
     }
 
     public void increaseByOne() {
-        if(number < 6) number++;
+        if(faceUpNumber < 6) faceUpNumber++;
     }
 
     public void decreaseByOne() {
-        if(number > 1) number--;
+        if(faceUpNumber > 1) faceUpNumber--;
     }
 }

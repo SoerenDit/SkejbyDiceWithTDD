@@ -1,25 +1,19 @@
 package skejbydice.domain;
 
-import java.util.Random;
-
 public class Die {
-    protected int number;
+    protected int faceUpNumber;
     private DieRollStrategy dieRollStrategy;
 
     public Die(DieRollStrategy dieRollStrategy) {
-        number = 1;
+        faceUpNumber = 1;
         this.dieRollStrategy = dieRollStrategy;
     }
 
-
-    public int getNumber() {
-        return number;
+    public int getFaceUpNumber() {
+        return faceUpNumber;
     }
 
     public void roll() {
-        number = dieRollStrategy.roll();
+        faceUpNumber = dieRollStrategy.roll();
     }
-
-
-
 }

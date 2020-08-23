@@ -20,7 +20,7 @@ public class TestDie {
     public void shouldReturnValidDieNumber() throws InvalidDieNumberException {
         Die d4 = new Die(new FixedNumberRollStrategy(4));
         d4.roll();
-        assertThat(d4.getNumber(), is(4));
+        assertThat(d4.getFaceUpNumber(), is(4));
     }
 /*
     @Test
@@ -43,7 +43,7 @@ public class TestDie {
         double sum = 0;
         for (int i = 1; i <= 100; i++) {
             dRandom.roll();
-            sum += dRandom.getNumber();
+            sum += dRandom.getFaceUpNumber();
         }
         assertThat(sum, closeTo(350, 100));
     }
@@ -54,7 +54,7 @@ public class TestDie {
         int max = 0;
         for (int i = 1; i <= 100; i++) {
             dRandom.roll();
-            int n = dRandom.getNumber();
+            int n = dRandom.getFaceUpNumber();
             if (n < min) min = n;
             if (n > max) max = n;
         }

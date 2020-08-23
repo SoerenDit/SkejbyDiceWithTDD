@@ -23,8 +23,8 @@ public class DiceManager {
     }
 
     public int getNumberOfSipsToGiveAway() {
-        if(isItFirstAttackingRollThisRound) return (attackingDie1.getNumber()+attackingDie2.getNumber())/2;
-        else return (attackingDie1.getNumber()+attackingDie2.getNumber()+1)/2;
+        if(isItFirstAttackingRollThisRound) return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber())/2;
+        else return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber()+1)/2;
     }
 
     public void setFirstAttackingRoll(boolean b) {
@@ -32,11 +32,11 @@ public class DiceManager {
     }
 
     public String getAttackingDiceNumbers() {
-        return "" + attackingDie1.getNumber() + " and " + attackingDie2.getNumber();
+        return "" + attackingDie1.getFaceUpNumber() + " and " + attackingDie2.getFaceUpNumber();
     }
 
     public boolean isDefenceSuccesful() {
-        return defendingDie.getNumber() >= attackingDie1.getNumber() && defendingDie.getNumber() >= attackingDie2.getNumber();
+        return defendingDie.getFaceUpNumber() >= attackingDie1.getFaceUpNumber() && defendingDie.getFaceUpNumber() >= attackingDie2.getFaceUpNumber();
     }
 
 

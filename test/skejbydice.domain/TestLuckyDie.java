@@ -1,10 +1,8 @@
 package skejbydice.domain;
 
-import org.hamcrest.MatcherAssert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -19,9 +17,9 @@ public class TestLuckyDie {
 
     @Test
     public void shouldIncreaseLuckyDieByOne() {
-        assertThat(lucky.getNumber(), is(1));
+        assertThat(lucky.getFaceUpNumber(), is(1));
         lucky.increaseByOne();
-        assertThat(lucky.getNumber(),is(2));
+        assertThat(lucky.getFaceUpNumber(),is(2));
     }
 
     @Test
@@ -31,24 +29,24 @@ public class TestLuckyDie {
         lucky.increaseByOne();
         lucky.increaseByOne();
         lucky.increaseByOne();
-        assertThat(lucky.getNumber(),is(6));
+        assertThat(lucky.getFaceUpNumber(),is(6));
         lucky.increaseByOne();
-        assertThat(lucky.getNumber(),is(6));
+        assertThat(lucky.getFaceUpNumber(),is(6));
     }
 
     @Test
     public void shouldDecreaseLuckyDieByOne() {
         lucky.increaseByOne();
-        assertThat(lucky.getNumber(), is(2));
+        assertThat(lucky.getFaceUpNumber(), is(2));
         lucky.decreaseByOne();
-        assertThat(lucky.getNumber(),is(1));
+        assertThat(lucky.getFaceUpNumber(),is(1));
     }
 
     @Test
     public void shouldBeUnableToDecreaseNumberToLessThanSix() {
-        assertThat(lucky.getNumber(),is(1));
+        assertThat(lucky.getFaceUpNumber(),is(1));
         lucky.decreaseByOne();
-        assertThat(lucky.getNumber(),is(1));
+        assertThat(lucky.getFaceUpNumber(),is(1));
     }
 
 }

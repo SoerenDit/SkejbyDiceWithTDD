@@ -28,7 +28,6 @@ public class TestAttackAndDefence {
         diceManager.rollAttackingDice();
         diceManager.setFirstAttackingRoll(false);
         assertThat(diceManager.getNumberOfSipsToGiveAway(),is(5));
-
     }
 
     @Test
@@ -51,5 +50,4 @@ public class TestAttackAndDefence {
     private Die die(int i) throws InvalidDieNumberException {
         return new Die(new FixedNumberRollStrategy(i));
     }
-
 }
