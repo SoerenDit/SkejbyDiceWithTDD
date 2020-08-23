@@ -13,7 +13,7 @@ public class TestChosePlayerStrategy {
     @Before
     public void setUp() {
         beta = new Player("Beta");
-        chosePlayerStrategy = new ChoseTheSamePlayerAlways(beta);
+        chosePlayerStrategy = new ChoseTheSamePlayerAlwaysStrategy(beta);
     }
 
     @Test
