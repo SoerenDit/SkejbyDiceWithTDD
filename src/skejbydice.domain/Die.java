@@ -4,23 +4,22 @@ import java.util.Random;
 
 public class Die {
     protected int number;
+    private DieRollStrategy dieRollStrategy;
 
-    public Die() {
+    public Die(DieRollStrategy dieRollStrategy) {
         number = 1;
+        this.dieRollStrategy = dieRollStrategy;
     }
+
 
     public int getNumber() {
         return number;
     }
 
     public void roll() {
-        Random rand = new Random();
-        number = rand.nextInt(6)+1;
+        number = dieRollStrategy.roll();
     }
 
-    public void setNumber(int n) throws InvalidDieNumberException  {
-        if(n < 1 || n > 6) throw new InvalidDieNumberException("Invalid die number: " + n);
-        number = n;
-    }
+
 
 }

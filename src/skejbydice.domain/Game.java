@@ -24,11 +24,11 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategy chosePlayerStrategy) {
+    public Game(ChosePlayerStrategy chosePlayerStrategy, Die attackingDie1, Die attackingDie2, Die defendingDie) {
 
         players = new ArrayList<Player>();
         currentPlayer = 0;
-        diceManager = new DiceManager();
+        diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         currentState = gameState.idle;
         this.chosePlayerStrategy = chosePlayerStrategy;
     }

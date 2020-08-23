@@ -9,39 +9,41 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestDie {
-    private Die d;
+    private Die dRandom;
 
     @Before
-    public void setUp() {
-        d = new Die();
+    public void setUp() throws InvalidDieNumberException {
+        dRandom = new Die(new RandomRollStrategy());
     }
 
     @Test
     public void shouldReturnValidDieNumber() throws InvalidDieNumberException {
-        d.setNumber(4);
-        assertThat(d.getNumber(), is(4));
+        Die d4 = new Die(new FixedNumberRollStrategy(4));
+        d4.roll();
+        assertThat(d4.getNumber(), is(4));
     }
-
+/*
     @Test
     public void shouldRejectDieNumberToBeSetTo7() {
         InvalidDieNumberException theException =
-                assertThrows(InvalidDieNumberException.class, () -> d.setNumber(7));
+                assertThrows(InvalidDieNumberException.class, () -> d4.setNumber(7));
         assertThat(theException.getMessage(), containsString("Invalid die number: " + 7));
     }
 
     @Test
     public void shouldRejectDieNumberToBeSetTo0() {
         InvalidDieNumberException theException =
-                assertThrows(InvalidDieNumberException.class, () -> d.setNumber(0));
+                assertThrows(InvalidDieNumberException.class, () -> d4.setNumber(0));
         assertThat(theException.getMessage(), containsString("Invalid die number: " + 0));
     }
+ */
 
     @Test
     public void shouldRoll3To4OnAverage() {
         double sum = 0;
         for (int i = 1; i <= 100; i++) {
-            d.roll();
-            sum += d.getNumber();
+            dRandom.roll();
+            sum += dRandom.getNumber();
         }
         assertThat(sum, closeTo(350, 100));
     }
@@ -51,18 +53,13 @@ public class TestDie {
         int min = 10;
         int max = 0;
         for (int i = 1; i <= 100; i++) {
-            d.roll();
-            int n = d.getNumber();
+            dRandom.roll();
+            int n = dRandom.getNumber();
             if (n < min) min = n;
             if (n > max) max = n;
         }
         assertThat(min, is(1));
         assertThat(max, is(6));
     }
-/**
- @Test public void shouldReturn5Sips() {
- Die d2 = new Die();
- d.setNumber();
- }
- **/
+
 }

@@ -14,7 +14,7 @@ public class TestLuckyDie {
 
     @Before
     public void setUp() {
-        lucky = new LuckyDie();
+        lucky = new LuckyDie(new RandomRollStrategy());
     }
 
     @Test

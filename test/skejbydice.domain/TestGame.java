@@ -16,7 +16,8 @@ public class TestGame {
     public void setUp() {
         alpha = new Player("Alpha");
         beta = new Player("Beta");
-        game = new Game(new ChoseTheSamePlayerAlways(beta));
+        Die randomDie = new Die(new RandomRollStrategy());
+        game = new Game(new ChoseTheSamePlayerAlways(beta), randomDie, randomDie, randomDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
@@ -48,16 +49,10 @@ public class TestGame {
         assertThat(game.getPlayerUnderAttack(), is(beta));
     }
 
-
     @Test
     public void shouldReturnTheIdleState() {
         assertThat(game.getCurrentState(), is(Game.gameState.idle));
     }
-
-
-
-
-
 
 }
 

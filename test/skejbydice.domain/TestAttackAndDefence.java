@@ -7,51 +7,49 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class TestAttackAndDefence {
-    DiceManager diceManager;
-
-    @Before
-    public void setUp() {
-        diceManager = new DiceManager();
-    }
-
-    @Test
-    public void shouldReturnTheSumOfTheAttackingDice() throws InvalidDieNumberException {
-        diceManager.setAttackingDice(6,6);
-        assertThat(diceManager.getSumOfAttackingDice(),is(12));
-    }
 
     @Test
     public void shouldReturnThatRollingA3AndA5Gives4Sips() throws InvalidDieNumberException {
-        diceManager.setAttackingDice(3,5);
+        DiceManager diceManager = new DiceManager(die(3),die(5),die(6));
+        diceManager.rollAttackingDice();
         assertThat(diceManager.getNumberOfSipsToGiveAway(),is(4));
     }
 
     @Test
     public void shouldReturnThatRollingA3AndA6Gives4Sips() throws InvalidDieNumberException {
-        diceManager.setAttackingDice(3,6);
+        DiceManager diceManager = new DiceManager(die(3),die(6),die(6));
+        diceManager.rollAttackingDice();
         assertThat(diceManager.getNumberOfSipsToGiveAway(),is(4));
     }
 
     @Test
     public void secondAttackingRollShouldRoundUpWhenDecidingNumberOfSips() throws InvalidDieNumberException {
+        DiceManager diceManager = new DiceManager(die(3),die(6),die(6));
+        diceManager.rollAttackingDice();
         diceManager.setFirstAttackingRoll(false);
-        diceManager.setAttackingDice(3,6);
         assertThat(diceManager.getNumberOfSipsToGiveAway(),is(5));
 
     }
 
     @Test
     public void rollingA6ShouldDefendYouFrom3And6Attack() throws InvalidDieNumberException {
-        diceManager.setAttackingDice(3,6);
-        diceManager.setDefendingDie(6);
+        DiceManager diceManager = new DiceManager(die(3),die(6),die(6));
+        diceManager.rollAttackingDice();
+        diceManager.rollDefendingDice();
         assertTrue(diceManager.isDefenceSuccesful());
     }
 
     @Test
     public void rollingA5ShouldNotDefendYouFrom3And6Attack() throws InvalidDieNumberException {
-        diceManager.setAttackingDice(3,6);
-        diceManager.setDefendingDie(5);
+        DiceManager diceManager = new DiceManager(die(3),die(6),die(5));
+        diceManager.rollAttackingDice();
+        diceManager.rollDefendingDice();
         assertFalse(diceManager.isDefenceSuccesful());
+    }
+
+    // Helper method to create a die with a fixed number
+    private Die die(int i) throws InvalidDieNumberException {
+        return new Die(new FixedNumberRollStrategy(i));
     }
 
 }
