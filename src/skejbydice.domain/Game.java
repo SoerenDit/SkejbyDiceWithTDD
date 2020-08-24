@@ -78,7 +78,7 @@ public class Game {
 
     private void onDecideWhetherToDrinkYourselfOrAttack() {
         print("Do you want to drink yourself or to attack?");
-        if(decisionManager.doYouWantToDrinkTheSipsYourself() && rerollNumber < maxRerollNunber) {
+        if(decisionManager.willYouDrinkAndReroll() && rerollNumber < maxRerollNunber) {
             rerollNumber++;
             diceManager.setFirstAttackingRoll(false);
             currentState = gameState.aboutToRollAttackingDice;

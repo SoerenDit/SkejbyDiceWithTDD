@@ -13,7 +13,7 @@ public class DecisionManager implements DecisionManagerI {
     }
 
     @Override
-    public boolean doYouWantToDrinkTheSipsYourself() {
+    public boolean willYouDrinkAndReroll() {
         return true;
     }
 }
