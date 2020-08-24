@@ -11,4 +11,9 @@ public class DecisionManager implements DecisionManagerI {
     public Player chosePlayer() {
         return chosePlayerStrategy.chosePlayer();
     }
+
+    @Override
+    public boolean doYouWantToDrinkTheSipsYourself() {
+        return true;
+    }
 }

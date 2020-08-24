@@ -1,7 +1,6 @@
 package skejbydice.domain;
 
 public class Game {
-    private GameManager gameManager;
     private PlayerManager playerManager;
     private DiceManager diceManager;
     private DecisionManager decisionManager;
@@ -29,7 +28,6 @@ public class Game {
         rerollNumber = 0;
         maxRerollNunber = 1;
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
-        gameManager = new GameManager();
         playerManager = new PlayerManager();
         decisionManager = new DecisionManager(chosePlayerStrategy);
         currentState = gameState.idle;
@@ -80,7 +78,7 @@ public class Game {
 
     private void onDecideWhetherToDrinkYourselfOrAttack() {
         print("Do you want to drink yourself or to attack?");
-        if(gameManager.doYouWantToDrinkTheSipsYourself() && rerollNumber < maxRerollNunber) {
+        if(decisionManager.doYouWantToDrinkTheSipsYourself() && rerollNumber < maxRerollNunber) {
             rerollNumber++;
             diceManager.setFirstAttackingRoll(false);
             currentState = gameState.aboutToRollAttackingDice;
