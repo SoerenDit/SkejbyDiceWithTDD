@@ -19,7 +19,7 @@ public class TestGame {
         RegularDie attackingDie1 = new RegularDie(new RandomRollStrategy());
         RegularDie attackingDie2 = new RegularDie(new RandomRollStrategy());
         RegularDie defendingDie = new RegularDie(new RandomRollStrategy());
-        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), attackingDie1, attackingDie2, defendingDie);
+        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), new AlwaysRerollOnceStrategy(), attackingDie1, attackingDie2, defendingDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }

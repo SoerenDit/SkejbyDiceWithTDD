@@ -8,9 +8,6 @@ public class Game {
     private boolean isThisTheLastTurn = true;
     private boolean testing; //Only for testing purposes
 
-    private int rerollNumber;
-    private int maxRerollNunber;
-
     public enum gameState {
         idle,
         start,
@@ -24,12 +21,10 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategyI chosePlayerStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
-        rerollNumber = 0;
-        maxRerollNunber = 1;
+    public Game(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         playerManager = new PlayerManager();
-        decisionManager = new DecisionManager(chosePlayerStrategy);
+        decisionManager = new DecisionManager(chosePlayerStrategy, rerollOrAttackStrategy);
         currentState = gameState.idle;
     }
 
@@ -78,8 +73,7 @@ public class Game {
 
     private void onDecideWhetherToDrinkYourselfOrAttack() {
         print("Do you want to drink yourself or to attack?");
-        if(decisionManager.willYouDrinkAndReroll() && rerollNumber < maxRerollNunber) {
-            rerollNumber++;
+        if(decisionManager.willYouDrinkAndReroll()) {
             diceManager.setFirstAttackingRoll(false);
             currentState = gameState.aboutToRollAttackingDice;
             gameFlow();

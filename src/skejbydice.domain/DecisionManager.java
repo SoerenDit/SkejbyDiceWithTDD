@@ -2,9 +2,11 @@ package skejbydice.domain;
 
 public class DecisionManager implements DecisionManagerI {
     ChosePlayerStrategyI chosePlayerStrategy;
+    RerollOrAttackStrategyI rerollOrAttackStrategy;
 
-    public DecisionManager(ChosePlayerStrategyI chosePlayerStrategy) {
+    public DecisionManager(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy) {
         this.chosePlayerStrategy = chosePlayerStrategy;
+        this.rerollOrAttackStrategy = rerollOrAttackStrategy;
     }
 
     @Override
@@ -14,6 +16,6 @@ public class DecisionManager implements DecisionManagerI {
 
     @Override
     public boolean willYouDrinkAndReroll() {
-        return true;
+        return rerollOrAttackStrategy.willYouDrinkAndReroll();
     }
 }
