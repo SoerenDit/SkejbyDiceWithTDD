@@ -5,7 +5,6 @@ public class Game {
     private DiceManager diceManager;
     private DecisionManager decisionManager;
     private gameState currentState;
-    private boolean isThisTheLastTurn = true;
     private boolean testing; //Only for testing purposes
 
     public enum gameState {
@@ -21,10 +20,11 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
+    public Game(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy,
+                RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         playerManager = new PlayerManager();
-        decisionManager = new DecisionManager(chosePlayerStrategy, rerollOrAttackStrategy);
+        decisionManager = new DecisionManager(chosePlayerStrategy, rerollOrAttackStrategy, decideNumberOfTurnsStrategy);
         currentState = gameState.idle;
     }
 
@@ -105,7 +105,7 @@ public class Game {
 
     private void onStartNextPlayersTurn() {
         print("Start next players turn");
-        if(isThisTheLastTurn) {
+        if(decisionManager.isThisTheLastTurn()) {
             currentState = gameState.gameFinished;
             gameFlow();
         } else {
