@@ -1,6 +1,6 @@
 package skejbydice.domain;
 
-public class ChoseTheSamePlayerAlwaysStrategy implements ChosePlayerStrategy{
+public class ChoseTheSamePlayerAlwaysStrategy implements ChosePlayerStrategyI {
     Player player;
 
     public ChoseTheSamePlayerAlwaysStrategy(Player player) {

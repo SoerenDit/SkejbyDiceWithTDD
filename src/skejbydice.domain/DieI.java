@@ -1,6 +1,6 @@
 package skejbydice.domain;
 
-public interface Die {
+public interface DieI {
     void roll();
     int getFaceUpNumber();
 }

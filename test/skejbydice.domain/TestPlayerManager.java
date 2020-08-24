@@ -6,7 +6,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestPlayerManager {
-    PlayerManagerImp playerManager;
+    PlayerManager playerManager;
     Player alpha;
     Player beta;
 
@@ -14,7 +14,7 @@ public class TestPlayerManager {
     public void setUp() {
         alpha = new Player("Alpha");
         beta = new Player("Beta");
-        playerManager = new PlayerManagerImp(new ChoseTheSamePlayerAlwaysStrategy(beta));
+        playerManager = new PlayerManager();
         playerManager.addPlayer(alpha);
         playerManager.addPlayer(beta);
     }
@@ -26,5 +26,10 @@ public class TestPlayerManager {
         Assert.assertThat(playerManager.getCurrentPlayer(), is(beta));
         playerManager.nextPlayer();
         Assert.assertThat(playerManager.getCurrentPlayer(), is(alpha));
+    }
+    @Test
+    public void shouldReturnThePlayerUnderAttack() {
+        playerManager.setPlayerUnderAttack(beta);
+        Assert.assertThat(playerManager.getPlayerUnderAttack(), is(beta));
     }
 }

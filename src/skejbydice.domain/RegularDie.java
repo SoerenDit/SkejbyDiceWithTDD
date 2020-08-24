@@ -1,10 +1,10 @@
 package skejbydice.domain;
 
-public class RegularDie implements Die{
+public class RegularDie implements DieI {
     protected int faceUpNumber;
-    private DieRollStrategy dieRollStrategy;
+    private DieRollStrategyI dieRollStrategy;
 
-    public RegularDie(DieRollStrategy dieRollStrategy) {
+    public RegularDie(DieRollStrategyI dieRollStrategy) {
         faceUpNumber = 1;
         this.dieRollStrategy = dieRollStrategy;
     }

@@ -1,10 +1,10 @@
 package skejbydice.domain;
 
-public class LuckyDie implements Die {
+public class LuckyDie implements DieI {
     int faceUpNumber;
-    DieRollStrategy dieRollStrategy;
+    DieRollStrategyI dieRollStrategy;
 
-    public LuckyDie(DieRollStrategy dieRollStrategy) {
+    public LuckyDie(DieRollStrategyI dieRollStrategy) {
         this.dieRollStrategy = dieRollStrategy;
         faceUpNumber = 1;
     }

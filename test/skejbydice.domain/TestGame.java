@@ -30,11 +30,7 @@ public class TestGame {
         assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
     }
 
-    @Test
-    public void shouldReturnThePlayerUnderAttack() {
-        game.start(false);
-        assertThat(game.getPlayerUnderAttack(), is(beta));
-    }
+
 
     @Test
     public void shouldReturnTheIdleState() {

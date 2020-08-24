@@ -1,5 +1,5 @@
 package skejbydice.domain;
 
-public interface DieRollStrategy {
+public interface DieRollStrategyI {
     int roll();
 }

@@ -1,6 +1,6 @@
 package skejbydice.domain;
 
-public class FixedNumberRollStrategy implements DieRollStrategy {
+public class FixedNumberRollStrategy implements DieRollStrategyI {
     private int number;
 
     public FixedNumberRollStrategy(int number) throws InvalidDieNumberException {

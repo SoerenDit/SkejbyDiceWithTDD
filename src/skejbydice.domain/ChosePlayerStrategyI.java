@@ -1,5 +1,5 @@
 package skejbydice.domain;
 
-public interface ChosePlayerStrategy {
+public interface ChosePlayerStrategyI {
     Player chosePlayer();
 }

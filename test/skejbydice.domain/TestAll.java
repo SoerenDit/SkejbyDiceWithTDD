@@ -1,5 +1,6 @@
 package skejbydice.domain;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -10,7 +11,8 @@ import org.junit.runners.Suite;
                 TestPlayer.class,
                 TestGame.class,
                 TestAttackAndDefence.class,
-                TestChosePlayerStrategy.class
+                TestChosePlayerStrategy.class,
+                TestPlayerManager.class
                 } )
 
 

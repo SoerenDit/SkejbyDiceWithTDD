@@ -1,15 +1,13 @@
 package skejbydice.domain;
 
-import java.util.ArrayList;
-
 public class Game {
     private GameManager gameManager;
-    private PlayerManagerImp playerManager;
+    private PlayerManager playerManager;
+    private DiceManager diceManager;
+    private DecisionManager decisionManager;
     private gameState currentState;
     private boolean isThisTheLastTurn = true;
     private boolean testing; //Only for testing purposes
-    private DiceManager diceManager;
-    private Player playerUnderAttack;
 
     private int rerollNumber;
     private int maxRerollNunber;
@@ -27,12 +25,13 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategy chosePlayerStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
+    public Game(ChosePlayerStrategyI chosePlayerStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         rerollNumber = 0;
         maxRerollNunber = 1;
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         gameManager = new GameManager();
-        playerManager = new PlayerManagerImp(chosePlayerStrategy);
+        playerManager = new PlayerManager();
+        decisionManager = new DecisionManager(chosePlayerStrategy);
         currentState = gameState.idle;
     }
 
@@ -94,8 +93,8 @@ public class Game {
 
     private void onChosePlayerToAttack() {
         print("Chose player to attack");
-        playerUnderAttack = playerManager.chosePlayer();
-        print("Player under attack is: " + playerUnderAttack.getName());
+        playerManager.setPlayerUnderAttack(decisionManager.chosePlayer());
+        print("Player under attack is: " + playerManager.getPlayerUnderAttack());
         currentState = gameState.aboutToRollDefendingDie;
         gameFlow();
     }
@@ -142,9 +141,5 @@ public class Game {
 
     public Object getCurrentState() {
         return currentState;
-    }
-
-    public Player getPlayerUnderAttack() {
-        return playerUnderAttack;
     }
 }
