@@ -45,8 +45,17 @@ public class TestAttackAndDefence {
         assertFalse(diceManager.isDefenceSuccesful());
     }
 
+    @Test
+    public void shouldBeAbleToDrinkAndRerollDuringAttack() throws InvalidDieNumberException {
+        DiceManager diceManager = new DiceManager(die(2),die(3),die(5));
+        diceManager.rollAttackingDice();
+        //assertThat();
+    }
+
     // Helper method to create a die with a fixed number
     private RegularDie die(int i) throws InvalidDieNumberException {
         return new RegularDie(new FixedNumberRollStrategy(i));
     }
+
+
 }

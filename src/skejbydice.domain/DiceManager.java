@@ -4,7 +4,7 @@ public class DiceManager {
     private RegularDie attackingDie1;
     private RegularDie attackingDie2;
     private RegularDie defendingDie;
-    private boolean isItFirstAttackingRollThisRound = true;
+    private boolean isItFirstAttackingRoll = true;
 
 
     public DiceManager(RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
@@ -23,12 +23,16 @@ public class DiceManager {
     }
 
     public int getNumberOfSipsToGiveAway() {
-        if(isItFirstAttackingRollThisRound) return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber())/2;
+        if(isItFirstAttackingRoll) return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber())/2;
         else return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber()+1)/2;
     }
 
     public void setFirstAttackingRoll(boolean b) {
-        isItFirstAttackingRollThisRound = b;
+        isItFirstAttackingRoll = b;
+    }
+
+    public boolean isItFirstAttackingRoll() {
+        return isItFirstAttackingRoll;
     }
 
     public String getAttackingDiceNumbers() {

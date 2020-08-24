@@ -16,8 +16,10 @@ public class TestGame {
     public void setUp() {
         alpha = new Player("Alpha");
         beta = new Player("Beta");
-        RegularDie randomDie = new RegularDie(new RandomRollStrategy());
-        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), randomDie, randomDie, randomDie);
+        RegularDie attackingDie1 = new RegularDie(new RandomRollStrategy());
+        RegularDie attackingDie2 = new RegularDie(new RandomRollStrategy());
+        RegularDie defendingDie = new RegularDie(new RandomRollStrategy());
+        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), attackingDie1, attackingDie2, defendingDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
@@ -53,6 +55,8 @@ public class TestGame {
     public void shouldReturnTheIdleState() {
         assertThat(game.getCurrentState(), is(Game.gameState.idle));
     }
+
+
 
 }
 

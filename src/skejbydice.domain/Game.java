@@ -11,12 +11,16 @@ public class Game {
     private DiceManager diceManager;
     private ChosePlayerStrategy chosePlayerStrategy;
     private Player playerUnderAttack;
+    private GameManager gameManager;
+    private int rerollNumber;
+    private int maxRerollNunber;
 
     public enum gameState {
         idle,
         start,
         turnStarted,
         aboutToRollAttackingDice,
+        aboutToDecideWhetherToDrinkYourselfOrAttack,
         aboutToChosePlayerToAttack,
         aboutToRollDefendingDie,
         aboutToPunishLosingPlayer,
@@ -27,7 +31,10 @@ public class Game {
     public Game(ChosePlayerStrategy chosePlayerStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         players = new ArrayList<Player>();
         currentPlayer = 0;
+        rerollNumber = 0;
+        maxRerollNunber = 1;
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
+        gameManager = new GameManager();
         currentState = gameState.idle;
         this.chosePlayerStrategy = chosePlayerStrategy;
     }
@@ -44,6 +51,7 @@ public class Game {
             case start: onGameStarted(); break;
             case turnStarted: onTurnStarted(); break;
             case aboutToRollAttackingDice: onRollAttackingDice(); break;
+            case aboutToDecideWhetherToDrinkYourselfOrAttack: onDecideWhetherToDrinkYourselfOrAttack(); break;
             case aboutToChosePlayerToAttack: onChosePlayerToAttack(); break;
             case aboutToRollDefendingDie: onRollDefendingDie(); break;
             case aboutToPunishLosingPlayer: onPunishLosingPlayer(); break;
@@ -68,9 +76,23 @@ public class Game {
         print("Roll attacking dice");
         diceManager.rollAttackingDice();
         print("Attacking dice: " + diceManager.getAttackingDiceNumbers());
-        print("This is the first attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
-        currentState = gameState.aboutToChosePlayerToAttack;
+        if(diceManager.isItFirstAttackingRoll()) print("This is the first attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
+        else print("This is the second attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
+        currentState = gameState.aboutToDecideWhetherToDrinkYourselfOrAttack;
         gameFlow();
+    }
+
+    private void onDecideWhetherToDrinkYourselfOrAttack() {
+        print("Do you want to drink yourself or to attack?");
+        if(gameManager.doYouWantToDrinkTheSipsYourself() && rerollNumber < maxRerollNunber) {
+            rerollNumber++;
+            diceManager.setFirstAttackingRoll(false);
+            currentState = gameState.aboutToRollAttackingDice;
+            gameFlow();
+        } else {
+            currentState = gameState.aboutToChosePlayerToAttack;
+            gameFlow();
+        }
     }
 
     private void onChosePlayerToAttack() {
