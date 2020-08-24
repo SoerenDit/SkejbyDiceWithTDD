@@ -3,15 +3,14 @@ package skejbydice.domain;
 import java.util.ArrayList;
 
 public class Game {
-    private ArrayList<Player> players;
-    private int currentPlayer;
+    private GameManager gameManager;
+    private PlayerManagerImp playerManager;
     private gameState currentState;
     private boolean isThisTheLastTurn = true;
     private boolean testing; //Only for testing purposes
     private DiceManager diceManager;
-    private ChosePlayerStrategy chosePlayerStrategy;
     private Player playerUnderAttack;
-    private GameManager gameManager;
+
     private int rerollNumber;
     private int maxRerollNunber;
 
@@ -29,14 +28,12 @@ public class Game {
     }
 
     public Game(ChosePlayerStrategy chosePlayerStrategy, RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
-        players = new ArrayList<Player>();
-        currentPlayer = 0;
         rerollNumber = 0;
         maxRerollNunber = 1;
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         gameManager = new GameManager();
+        playerManager = new PlayerManagerImp(chosePlayerStrategy);
         currentState = gameState.idle;
-        this.chosePlayerStrategy = chosePlayerStrategy;
     }
 
     public void start(boolean testing) {
@@ -97,7 +94,7 @@ public class Game {
 
     private void onChosePlayerToAttack() {
         print("Chose player to attack");
-        playerUnderAttack = chosePlayerStrategy.chosePlayer();
+        playerUnderAttack = playerManager.chosePlayer();
         print("Player under attack is: " + playerUnderAttack.getName());
         currentState = gameState.aboutToRollDefendingDie;
         gameFlow();
@@ -121,7 +118,7 @@ public class Game {
             currentState = gameState.gameFinished;
             gameFlow();
         } else {
-            nextPlayer();
+            playerManager.nextPlayer();
             currentState = gameState.turnStarted;
             gameFlow();
 
@@ -140,20 +137,7 @@ public class Game {
     }
 
     public void addPlayer(Player p) {
-        players.add(p);
-    }
-
-    public Player getPlayer(int i) {
-        return players.get(i);
-    }
-
-    public Player whoseTurnIsIt() {
-        return players.get(currentPlayer);
-    }
-
-    public void nextPlayer() {
-        if(currentPlayer + 1 < players.size()) currentPlayer++;
-        else currentPlayer = 0;
+        playerManager.addPlayer(p);
     }
 
     public Object getCurrentState() {

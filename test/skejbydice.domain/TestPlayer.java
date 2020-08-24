@@ -2,12 +2,6 @@ package skejbydice.domain;
 
 import org.junit.*;
 import org.junit.Test;
-
-import skejbydice.domain.Player;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
-
-
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 

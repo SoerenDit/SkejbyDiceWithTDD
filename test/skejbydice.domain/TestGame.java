@@ -31,21 +31,6 @@ public class TestGame {
     }
 
     @Test
-    public void shouldAddTwoPlayersToGame() {
-        assertThat(game.getPlayer(0), is(alpha));
-        assertThat(game.getPlayer(1), is(beta));
-    }
-
-    @Test
-    public void shouldReturnTheActivePlayer() {
-        assertThat(game.whoseTurnIsIt(), is(alpha));
-        game.nextPlayer();
-        assertThat(game.whoseTurnIsIt(), is(beta));
-        game.nextPlayer();
-        assertThat(game.whoseTurnIsIt(), is(alpha));
-    }
-
-    @Test
     public void shouldReturnThePlayerUnderAttack() {
         game.start(false);
         assertThat(game.getPlayerUnderAttack(), is(beta));
