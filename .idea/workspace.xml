@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/skejbydice/domain/RegularDecideNumberOfTurnsStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skejbydice/domain/RegularRerollOrAttackStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/skejbydice/view/SkejbyDiceGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +68,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -76,6 +80,19 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestAll">
+    <configuration name="SkejbyDiceGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="skejbydice.view.SkejbyDiceGUI" />
+      <module name="SkejbyDiceWithTDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="skejbydice.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
@@ -138,28 +155,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkejbyDiceWithTDD" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="skejbydice.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="skejbydice.domain" />
-      <option name="MAIN_CLASS_NAME" value="skejbydice.domain.TestPlayer" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestAll" />
+        <item itemvalue="Application.SkejbyDiceGUI" />
         <item itemvalue="JUnit.TestGame.shouldReachTheGameEndedState" />
         <item itemvalue="JUnit.TestGame" />
         <item itemvalue="JUnit.TestGame.shouldAddPlayerAlphaToGame" />
-        <item itemvalue="JUnit.TestPlayer" />
       </list>
     </recent_temporary>
   </component>
@@ -190,14 +192,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="99" key="#Project_Structure" timestamp="1597747437916">
+    <state x="440" y="99" key="#Project_Structure" timestamp="1598532603752">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="440" y="99" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1597747437916" />
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1598268436967">
+    <state x="440" y="99" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1598532603752" />
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1598536045362">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598268436967" />
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598536045362" />
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1597091705620">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -218,22 +220,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1598523253182" />
-    <state width="1877" height="358" key="GridCell.Tab.0.bottom" timestamp="1598269480986">
+    <state width="1877" height="90" key="GridCell.Tab.0.bottom" timestamp="1598535720734">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598269480986" />
-    <state width="1877" height="358" key="GridCell.Tab.0.center" timestamp="1598269480986">
+    <state width="1877" height="90" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598535720734" />
+    <state width="1877" height="90" key="GridCell.Tab.0.center" timestamp="1598535720734">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598269480986" />
-    <state width="1877" height="358" key="GridCell.Tab.0.left" timestamp="1598269480986">
+    <state width="1877" height="90" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598535720734" />
+    <state width="1877" height="90" key="GridCell.Tab.0.left" timestamp="1598535720734">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598269480986" />
-    <state width="1877" height="358" key="GridCell.Tab.0.right" timestamp="1598269480986">
+    <state width="1877" height="90" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598535720734" />
+    <state width="1877" height="90" key="GridCell.Tab.0.right" timestamp="1598535720734">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="358" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598269480986" />
+    <state width="1877" height="90" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598535720734" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
