@@ -19,3 +19,4 @@ import org.junit.runners.Suite;
 public class TestAll {
     // Dummy - it is the annotations that tell JUnit what to do...
 }
+
