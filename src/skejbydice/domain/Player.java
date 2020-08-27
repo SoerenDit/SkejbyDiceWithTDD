@@ -4,11 +4,13 @@ public class Player {
     private int sips;
     private int beers;
     private String name;
+    private LuckyDie luckyDie;
 
     public Player(String name) {
         this.name = name;
         sips = 0;
         beers = 0;
+        luckyDie = new LuckyDie(new RandomRollStrategy());
     }
 
     public void drinkSips(int i) {
@@ -34,5 +36,9 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public String getLuckyDieNumber() {
+        return "" + luckyDie.getFaceUpNumber();
     }
 }

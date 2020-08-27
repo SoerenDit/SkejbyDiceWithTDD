@@ -6,18 +6,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 
 public class SkejbyDiceGUI {
     private Game game;
 
-    public static void main(String[] args) {
-        new SkejbyDiceGUI();
-    }
-
-    public SkejbyDiceGUI() {
-        game = new Game(new ChosePlayerWithClickStrategy(),new RegularRerollOrAttackStrategy(), new RegularDecideNumberOfTurnsStrategy(), new RegularDie(new RandomRollStrategy()),new RegularDie(new RandomRollStrategy()),new RegularDie(new RandomRollStrategy()));
-
-
+    public SkejbyDiceGUI(Game game) throws InterruptedException {
+        this.game = game;
         JFrame frame = new JFrame("Skejby Dice");
         Container contentPane = frame.getContentPane();
         contentPane.setLayout(new BorderLayout());
@@ -25,10 +20,10 @@ public class SkejbyDiceGUI {
 
         JPanel statusPanel = new JPanel();
         statusPanel.setLayout(new GridLayout(4, 1));
-        statusPanel.add(new JLabel("Søren"));
-        statusPanel.add(new JLabel("Beers: "));
-        statusPanel.add(new JLabel("Sips: "));
-        statusPanel.add(new JLabel("Lucky Die: "));
+        statusPanel.add(new JLabel(game.getNameOfActivePlayer()));
+        statusPanel.add(new JLabel("Beers: " + game.getBeerFromActivePlayer()));
+        statusPanel.add(new JLabel("Sips: " + game.getSipsFromActivePlayer()));
+        statusPanel.add(new JLabel("Lucky Die: " + game.getLuckyDieNumberFromActivePlayer()));
         contentPane.add(statusPanel, BorderLayout.EAST);
 
         JPanel textPanel = new JPanel();
@@ -47,6 +42,7 @@ public class SkejbyDiceGUI {
         frame.setJMenuBar(menuBar);
         frame.pack();
         frame.setVisible(true);
+        TimeUnit.MINUTES.sleep(1);
     }
 
     private JComponent createButtonPanel() {
@@ -69,5 +65,4 @@ public class SkejbyDiceGUI {
         panel.add(drinkButton);
         return panel;
     }
-
 }

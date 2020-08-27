@@ -7,6 +7,8 @@ public class Game {
     private gameState currentState;
     private boolean testing; //Only for testing purposes
 
+
+
     public enum gameState {
         idle,
         start,
@@ -127,11 +129,38 @@ public class Game {
         if(testing) System.out.println(s);
     }
 
+    public Object getCurrentState() {
+        return currentState;
+    }
+
+
+    // Methods for communicating with GUI
+    public String getNameOfActivePlayer() {
+        Player activePlayer = playerManager.getCurrentPlayer();
+        return activePlayer.getName();
+    }
+
     public void addPlayer(Player p) {
         playerManager.addPlayer(p);
     }
 
-    public Object getCurrentState() {
-        return currentState;
+    public String getBeerFromActivePlayer() {
+        Player activePlayer = playerManager.getCurrentPlayer();
+        return "" + activePlayer.getNumberOfBeers();
     }
+
+    public String getSipsFromActivePlayer() {
+        Player activePlayer = playerManager.getCurrentPlayer();
+        return "" + activePlayer.getSips();
+    }
+
+    public String getLuckyDieNumberFromActivePlayer() {
+        Player activePlayer = playerManager.getCurrentPlayer();
+
+        return "" + activePlayer.getLuckyDieNumber();
+    }
+
+
+
+
 }
