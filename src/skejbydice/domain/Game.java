@@ -7,6 +7,8 @@ public class Game {
     private gameState currentState;
     private boolean testing; //Only for testing purposes
 
+    public void getStatusText() {
+    }
 
 
     public enum gameState {
