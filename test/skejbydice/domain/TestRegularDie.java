@@ -36,7 +36,7 @@ public class TestRegularDie {
                 assertThrows(InvalidDieNumberException.class, () -> d4.setNumber(0));
         assertThat(theException.getMessage(), containsString("Invalid die number: " + 0));
     }
- */
+*/
 
     @Test
     public void shouldRoll3To4OnAverage() {
