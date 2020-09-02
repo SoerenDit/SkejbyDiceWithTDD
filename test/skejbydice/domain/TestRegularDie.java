@@ -22,21 +22,21 @@ public class TestRegularDie {
         d4.roll();
         assertThat(d4.getFaceUpNumber(), is(4));
     }
-/*
+
     @Test
     public void shouldRejectDieNumberToBeSetTo7() {
         InvalidDieNumberException theException =
-                assertThrows(InvalidDieNumberException.class, () -> d4.setNumber(7));
+                assertThrows(InvalidDieNumberException.class, () -> new RegularDie(new FixedNumberRollStrategy(7)));
         assertThat(theException.getMessage(), containsString("Invalid die number: " + 7));
     }
 
     @Test
     public void shouldRejectDieNumberToBeSetTo0() {
         InvalidDieNumberException theException =
-                assertThrows(InvalidDieNumberException.class, () -> d4.setNumber(0));
+                assertThrows(InvalidDieNumberException.class, () -> new RegularDie(new FixedNumberRollStrategy(0)));
         assertThat(theException.getMessage(), containsString("Invalid die number: " + 0));
     }
-*/
+
 
     @Test
     public void shouldRoll3To4OnAverage() {
