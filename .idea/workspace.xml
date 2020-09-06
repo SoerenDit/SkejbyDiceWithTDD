@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RegularDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/RegularDie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +80,7 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSkejbyDiceGUI">
+  <component name="RunManager" selected="JUnit.TestAll">
     <configuration name="SkejbyDiceGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="skejbydice.view.SkejbyDiceGUI" />
       <module name="SkejbyDiceWithTDD" />
@@ -155,8 +158,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestAll" />
+        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestSkejbyDiceGUI.testGUI" />
         <item itemvalue="Application.SkejbyDiceGUI" />
         <item itemvalue="JUnit.TestGame.shouldReachTheGameEndedState" />
@@ -219,25 +222,25 @@
     </state>
     <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599050884237" />
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1598606193861" />
-    <state width="1493" height="256" key="GridCell.Tab.0.bottom" timestamp="1599415975620">
+    <state width="1493" height="256" key="GridCell.Tab.0.bottom" timestamp="1599417509116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="256" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599415975620" />
+    <state width="1493" height="256" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599417509116" />
     <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598608680133" />
-    <state width="1493" height="256" key="GridCell.Tab.0.center" timestamp="1599415975604">
+    <state width="1493" height="256" key="GridCell.Tab.0.center" timestamp="1599417509116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="256" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599415975604" />
+    <state width="1493" height="256" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599417509116" />
     <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598608680133" />
-    <state width="1493" height="256" key="GridCell.Tab.0.left" timestamp="1599415975604">
+    <state width="1493" height="256" key="GridCell.Tab.0.left" timestamp="1599417509116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="256" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599415975604" />
+    <state width="1493" height="256" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599417509116" />
     <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598608680133" />
-    <state width="1493" height="256" key="GridCell.Tab.0.right" timestamp="1599415975620">
+    <state width="1493" height="256" key="GridCell.Tab.0.right" timestamp="1599417509116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="256" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599415975620" />
+    <state width="1493" height="256" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599417509116" />
     <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598608680133" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -268,6 +271,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="342" y="145" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1597747431097" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1599416539379">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1599416539379" />
     <state x="498" y="180" width="672" height="539" key="search.everywhere.popup" timestamp="1599050466386">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

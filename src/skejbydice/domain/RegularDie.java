@@ -16,4 +16,8 @@ public class RegularDie implements DieI {
     public void roll() {
         faceUpNumber = dieRollStrategy.roll();
     }
+
+    public void changeRollStrategy(skejbydice.domain.DieRollStrategyI dieRollStrategy) {
+        this.dieRollStrategy = dieRollStrategy;
+    }
 }

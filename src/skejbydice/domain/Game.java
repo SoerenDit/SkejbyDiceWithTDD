@@ -6,7 +6,9 @@ public class Game {
     private DecisionManager decisionManager;
     private gameState currentState;
     private String statusText;
-    private boolean testing; //Only for testing purposes
+    private boolean print; //Only for testing purposes
+
+
 
     public enum gameState {
         idle,
@@ -29,8 +31,8 @@ public class Game {
         currentState = gameState.idle;
     }
 
-    public void start(boolean testing) {
-        this.testing = testing;
+    public void start(boolean print) {
+        this.print = print;
         currentState = gameState.start;
         gameFlow();
     }
@@ -72,15 +74,13 @@ public class Game {
         statusText = "Turn started";
         currentState = gameState.turnStarted;
         print(statusText);
-        gameFlow();
     }
 
     public void onTurnStarted() {
         statusText = "Turn started. Roll the attacking dice!";
         currentState = gameState.aboutToRollAttackingDice;
-        if (testing) {
+        if (print) {
             print(statusText);
-            gameFlow();
         }
     }
 
@@ -94,7 +94,6 @@ public class Game {
         else
             print("This is the second attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
         currentState = gameState.aboutToDecideWhetherToDrinkYourselfOrAttack;
-        gameFlow();
     }
 
     public void onDecideWhetherToDrinkYourselfOrAttack() {
@@ -103,10 +102,8 @@ public class Game {
         if (decisionManager.willYouDrinkAndReroll()) {
             diceManager.setFirstAttackingRoll(false);
             currentState = gameState.aboutToRollAttackingDice;
-            gameFlow();
         } else {
             currentState = gameState.aboutToChosePlayerToAttack;
-            gameFlow();
         }
     }
 
@@ -117,21 +114,18 @@ public class Game {
         statusText = "Player under attack is: " + playerManager.getPlayerUnderAttack();
         print(statusText);
         currentState = gameState.aboutToRollDefendingDie;
-        gameFlow();
     }
 
     public void onRollDefendingDie() {
         statusText = "Roll defending die";
         print(statusText);
         currentState = gameState.aboutToPunishLosingPlayer;
-        gameFlow();
     }
 
     public void onPunishLosingPlayer() {
         statusText = "Punish losing player";
         print(statusText);
         currentState = gameState.aboutToStartNextPlayersTurn;
-        gameFlow();
     }
 
     public void onStartNextPlayersTurn() {
@@ -139,11 +133,9 @@ public class Game {
         print(statusText);
         if (decisionManager.isThisTheLastTurn()) {
             currentState = gameState.gameFinished;
-            gameFlow();
         } else {
             playerManager.nextPlayer();
             currentState = gameState.turnStarted;
-            gameFlow();
         }
     }
 
@@ -193,5 +185,7 @@ public class Game {
         return statusText;
     }
 
-
+    public int getAttackingValue() {
+        return diceManager.getNumberOfSipsToGiveAway();
+    }
 }
