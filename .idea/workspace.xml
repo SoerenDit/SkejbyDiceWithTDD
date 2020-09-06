@@ -77,7 +77,7 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestAll">
+  <component name="RunManager" selected="JUnit.TestSkejbyDiceGUI">
     <configuration name="TestAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
@@ -156,10 +156,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestAll" />
         <item itemvalue="JUnit.TestPlayer" />
         <item itemvalue="JUnit.TestGame" />
-        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestSkejbyDiceGUI.testGUI" />
       </list>
     </recent_temporary>

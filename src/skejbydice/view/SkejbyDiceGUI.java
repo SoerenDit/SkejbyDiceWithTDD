@@ -109,6 +109,8 @@ public class SkejbyDiceGUI {
         JButton nextButton = new JButton("Next");
         rollButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                updatePlayerStatus();
+                updateTextPanel();
                 game.gameFlow();
             }
         });
