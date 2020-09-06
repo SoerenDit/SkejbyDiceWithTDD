@@ -2,11 +2,11 @@ package skejbydice.domain;
 
 import skejbydice.domain.RerollOrAttackStrategyI;
 
-public class AlwaysRerollOnceStrategy implements RerollOrAttackStrategyI {
+public class RerollOnceStrategy implements RerollOrAttackStrategyI {
     private int rerollNumber;
     private int maxRerollNunber;
 
-    public AlwaysRerollOnceStrategy() {
+    public RerollOnceStrategy() {
         rerollNumber = 0;
         maxRerollNunber = 1;
     }

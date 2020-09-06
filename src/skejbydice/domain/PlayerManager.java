@@ -34,6 +34,11 @@ public class PlayerManager implements PlayerManagerI {
     }
 
     @Override
+    public void increaseActivePlayerSips(int numberOfSipsToGiveAway) {
+        getCurrentPlayer().drinkSips(numberOfSipsToGiveAway);
+    }
+
+    @Override
     public void addPlayer(Player player) {
         players.add(player);
     }

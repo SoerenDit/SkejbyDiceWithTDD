@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RegularRerollOrAttackStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/RegularRerollOrAttackStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/domain/TestPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestRegularDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/domain/TestRegularDie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,10 +195,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="99" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1598532603752" />
-    <state x="612" y="183" key="#com.intellij.ide.util.MemberChooser" timestamp="1599417717552">
+    <state x="612" y="183" key="#com.intellij.ide.util.MemberChooser" timestamp="1599419058129">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="612" y="183" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1599417717552" />
+    <state x="612" y="183" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1599419058129" />
     <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598603171725" />
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1597091705620">
       <screen x="0" y="0" width="1920" height="1050" />

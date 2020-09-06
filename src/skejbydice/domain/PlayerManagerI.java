@@ -6,4 +6,6 @@ public interface PlayerManagerI {
     Player getPlayerUnderAttack();
     void setPlayerUnderAttack(Player player);
     void nextPlayer();
+
+    void increaseActivePlayerSips(int numberOfSipsToGiveAway);
 }

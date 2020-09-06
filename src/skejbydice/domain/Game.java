@@ -100,6 +100,7 @@ public class Game {
         statusText = "Do you want to drink yourself or to attack?";
         print(statusText);
         if (decisionManager.willYouDrinkAndReroll()) {
+            playerManager.increaseActivePlayerSips(diceManager.getNumberOfSipsToGiveAway());
             diceManager.setFirstAttackingRoll(false);
             currentState = gameState.aboutToRollAttackingDice;
         } else {
@@ -171,9 +172,9 @@ public class Game {
         return "" + activePlayer.getNumberOfBeers();
     }
 
-    public String getSipsFromActivePlayer() {
+    public int getSipsFromActivePlayer() {
         Player activePlayer = playerManager.getCurrentPlayer();
-        return "" + activePlayer.getSips();
+        return activePlayer.getSips();
     }
 
     public String getLuckyDieNumberFromActivePlayer() {
