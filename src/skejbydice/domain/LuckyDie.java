@@ -26,4 +26,9 @@ public class LuckyDie implements DieI {
     public int getFaceUpNumber() {
         return faceUpNumber;
     }
+
+    @Override
+    public void changeRollStrategy(DieRollStrategyI dieRollStrategy) {
+        this.dieRollStrategy = dieRollStrategy;
+    }
 }
