@@ -16,6 +16,7 @@ public class TestPlayer {
 
     @Test
     public void shouldIncreasePlayerSipsByOne() {
+        assertThat(p.getSips(),is(0));
         p.drinkSips(1);
         assertThat(p.getSips(),is(1));
     }
@@ -30,6 +31,7 @@ public class TestPlayer {
 
     @Test
     public void shouldIncreaseBeerByOneAndResetPlayerSipsToZeroByEmptying() {
+        assertThat(p.getNumberOfBeers(),is(0));
         p.drinkSips(1);
         p.emptyBeer();
         assertThat(p.getNumberOfBeers(), is(1));
@@ -47,7 +49,4 @@ public class TestPlayer {
     public void shouldReturnPlayerName() {
         assertThat(p.getName(),is("Søren"));
     }
-
-
-
 }

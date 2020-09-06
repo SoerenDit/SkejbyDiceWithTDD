@@ -60,5 +60,4 @@ public class TestRegularDie {
         assertThat(min, is(1));
         assertThat(max, is(6));
     }
-
 }

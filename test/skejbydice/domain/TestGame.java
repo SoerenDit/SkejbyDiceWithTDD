@@ -48,21 +48,6 @@ public class TestGame {
     }
 
 
-/*
-    @Test
-    public void shouldReachTheGameEndedState() {
-        game.start(true);
-        assertThat(game.getCurrentState(), is(Game.gameState.gameFinished));
-    }
-
- */
-
-
-
-
-
-
-
 }
 
 
