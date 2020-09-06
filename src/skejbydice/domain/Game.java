@@ -36,7 +36,7 @@ public class Game {
     }
 
     //****************** Game Flow ********************//
-    private void gameFlow() {
+    public void gameFlow() {
         switch (currentState) {
             case start:
                 onGameStarted();

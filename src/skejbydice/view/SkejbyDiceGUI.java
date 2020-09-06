@@ -105,6 +105,14 @@ public class SkejbyDiceGUI {
             }
         });
         panel.add(drinkButton);
+
+        JButton nextButton = new JButton("Next");
+        rollButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                game.gameFlow();
+            }
+        });
+        panel.add(nextButton);
         return panel;
     }
 }
