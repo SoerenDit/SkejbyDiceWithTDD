@@ -36,14 +36,15 @@ public class TestGame {
 
     @Test
     public void rollingTwiceShouldRoundUpSips() throws InvalidDieNumberException {
-        attackingDie1.changeRollStrategy(new FixedNumberRollStrategy(3));
-        attackingDie2.changeRollStrategy(new FixedNumberRollStrategy(6));
+        attackingDie1.changeRollStrategy(new FixedNumberRollStrategy(3)); //Always rolls 3
+        attackingDie2.changeRollStrategy(new FixedNumberRollStrategy(6)); //Always rolls 6
         game.start(false);
-        game.onGameStarted();
-        game.onTurnStarted();
         game.onRollAttackingDice();
-        assertThat(game.getAttackingValue(),is(4));
+        assertThat(game.getAttackingValue(),is(4)); //First time rolling 3+6 gives 4 sips away
         game.onDecideWhetherToDrinkYourselfOrAttack();
+        assertThat(game.getCurrentState(),is(Game.gameState.aboutToRollAttackingDice));
+        game.onRollAttackingDice();
+        assertThat(game.getAttackingValue(),is(5)); //Second time rolling 3+6 gives 5 sips away
     }
 
 

@@ -71,7 +71,7 @@ public class Game {
     }
 
     public void onGameStarted() {
-        statusText = "Turn started";
+        statusText = "Game started";
         currentState = gameState.turnStarted;
         print(statusText);
     }
@@ -147,7 +147,8 @@ public class Game {
 
     // Helper methods
     private void print(String s) {
-        System.out.println(s);
+
+        if(print) System.out.println(s);
     }
 
     public gameState getCurrentState() {
