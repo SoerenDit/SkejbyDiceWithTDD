@@ -46,7 +46,7 @@ public class TestGame {
     }
 
     @Test
-    public void rollingTwiceShoulCauseAttackingPlayerToDrinkSips() throws InvalidDieNumberException {
+    public void rollingTwiceShouldCauseAttackingPlayerToDrinkSips() throws InvalidDieNumberException {
         attackingDie1.changeRollStrategy(new FixedNumberRollStrategy(3)); //Always rolls 3
         attackingDie2.changeRollStrategy(new FixedNumberRollStrategy(6)); //Always rolls 6
         game.start(false);
@@ -57,9 +57,6 @@ public class TestGame {
         game.onRollAttackingDice();
         assertThat(game.getSipsFromActivePlayer(),is(4)); //Second time rolling 3+6 gives 5 sips away
     }
-
-
-
 
 }
 
