@@ -26,11 +26,11 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy,
+    public Game(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DefenceStrategy defenceStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy,
                 RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         playerManager = new PlayerManager();
-        decisionManager = new DecisionManager(chosePlayerStrategy, rerollOrAttackStrategy, decideNumberOfTurnsStrategy);
+        decisionManager = new DecisionManager(chosePlayerStrategy, rerollOrAttackStrategy, defenceStrategy, decideNumberOfTurnsStrategy);
         currentState = gameState.idle;
     }
 

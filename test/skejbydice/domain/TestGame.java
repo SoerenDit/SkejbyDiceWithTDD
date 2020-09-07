@@ -24,7 +24,7 @@ public class TestGame {
         defendingDie = new RegularDie(new RandomRollStrategy());
 
         // This test game starts with Alfa rolling first, then rerolling once, and then attacking Beta. Stops after two turns.
-        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), new RerollOnceStrategy(), new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
+        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), new RerollOnceStrategy(), new AlwaysDefendYourselfStrategy(), new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
@@ -61,7 +61,7 @@ public class TestGame {
         game.start(true);
         game.onRollAttackingDice();
         game.setRerollOrAttackStrategy(new NeverRerollStrategy());
-        
+
     }
 
 }

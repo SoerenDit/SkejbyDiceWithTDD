@@ -9,7 +9,7 @@ public class TestSkejbyDiceGUI {
 
     @Before
     public void setUp() {
-        game = new Game(new ChosePlayerWithClickStrategy(), new RegularRerollOrAttackStrategy(), new RegularDecideNumberOfTurnsStrategy(), new RegularDie(new RandomRollStrategy()), new RegularDie(new RandomRollStrategy()), new RegularDie(new RandomRollStrategy()));
+        game = new Game(new ChosePlayerWithClickStrategy(), new RegularRerollOrAttackStrategy(), new AlwaysDefendYourselfStrategy(), new RegularDecideNumberOfTurnsStrategy(), new RegularDie(new RandomRollStrategy()), new RegularDie(new RandomRollStrategy()), new RegularDie(new RandomRollStrategy()));
         game.addPlayer(new Player("Alpha"));
         game.addPlayer(new Player("Beta"));
     }

@@ -4,8 +4,9 @@ public class DecisionManager implements DecisionManagerI {
     ChosePlayerStrategyI chosePlayerStrategy;
     RerollOrAttackStrategyI rerollOrAttackStrategy;
     DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy;
+    private DefenceStrategy defenceStrategy;
 
-    public DecisionManager(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy) {
+    public DecisionManager(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DefenceStrategy defenceStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy) {
         this.chosePlayerStrategy = chosePlayerStrategy;
         this.rerollOrAttackStrategy = rerollOrAttackStrategy;
         this.decideNumberOfTurnsStrategy = decideNumberOfTurnsStrategy;
@@ -29,5 +30,10 @@ public class DecisionManager implements DecisionManagerI {
     @Override
     public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {
         this.rerollOrAttackStrategy = rerollOrAttackStrategy;
+    }
+
+    @Override
+    public void setDefenceStrategy(DefenceStrategy defenceStrategy) {
+        this.defenceStrategy = defenceStrategy;
     }
 }

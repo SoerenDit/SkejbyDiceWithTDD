@@ -6,4 +6,6 @@ public interface DecisionManagerI {
     boolean isThisTheLastTurn();
 
     void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy);
+
+    void setDefenceStrategy(DefenceStrategy defenceStrategy);
 }
