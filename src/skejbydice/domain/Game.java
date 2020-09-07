@@ -8,6 +8,9 @@ public class Game {
     private String statusText;
     private boolean print; //Only for testing purposes
 
+    public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {
+        decisionManager.setRerollOrAttackStrategy(rerollOrAttackStrategy);
+    }
 
 
     public enum gameState {

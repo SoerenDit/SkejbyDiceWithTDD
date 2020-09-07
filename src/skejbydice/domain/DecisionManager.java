@@ -25,4 +25,9 @@ public class DecisionManager implements DecisionManagerI {
     public boolean isThisTheLastTurn() {
         return decideNumberOfTurnsStrategy.wasThisTheLastTurn();
     }
+
+    @Override
+    public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {
+        this.rerollOrAttackStrategy = rerollOrAttackStrategy;
+    }
 }

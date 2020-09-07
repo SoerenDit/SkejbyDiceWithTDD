@@ -20,6 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManagerI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +81,7 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSkejbyDiceGUI">
+  <component name="RunManager" selected="JUnit.TestAll">
     <configuration name="TestAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
@@ -156,15 +160,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestAll" />
+        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestPlayer" />
         <item itemvalue="JUnit.TestGame" />
         <item itemvalue="JUnit.TestSkejbyDiceGUI.testGUI" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
