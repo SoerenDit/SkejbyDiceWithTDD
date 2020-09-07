@@ -23,8 +23,8 @@ public class TestGame {
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
         defendingDie = new RegularDie(new RandomRollStrategy());
 
-        // This test game starts with Alfa rolling first, then rerolling once, and then attacking Beta. Stops after two turns.
-        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), new RerollOnceStrategy(), new AlwaysDefendYourselfStrategy(), new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
+        // This test game starts with Alfa rolling first, then rerolling once, and then attacking Beta. Beta Always tries to defend himself. Stops after two turns.
+        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), new RerollOnceStrategy(), new NeverDefendYourselfStrategy(), new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
@@ -61,9 +61,13 @@ public class TestGame {
         game.start(true);
         game.onRollAttackingDice();
         game.setRerollOrAttackStrategy(new NeverRerollStrategy());
-
+        game.onDecideWhetherToDrinkYourselfOrAttack();
+        game.onChosePlayerToAttack();
+        assertThat(game.getPlayerUnderAttack(),is(beta));
+        game.onDecideIfAttackedPlayerShouldDefendHimself();
+        game.gameFlow();
+        assertThat(game.getSipsFromPlayerUnderAttack(),is(4));
     }
-
 }
 
 

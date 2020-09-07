@@ -7,11 +7,11 @@ public class Game {
     private gameState currentState;
     private String statusText;
     private boolean print; //Only for testing purposes
+    private int noOfSipsToLosingPlayer;
 
     public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {
         decisionManager.setRerollOrAttackStrategy(rerollOrAttackStrategy);
     }
-
 
     public enum gameState {
         idle,
@@ -20,6 +20,7 @@ public class Game {
         aboutToRollAttackingDice,
         aboutToDecideWhetherToDrinkYourselfOrAttack,
         aboutToChosePlayerToAttack,
+        aboutToDecideIfAttackedPlayerShouldDefendHimself,
         aboutToRollDefendingDie,
         aboutToPunishLosingPlayer,
         aboutToStartNextPlayersTurn,
@@ -57,6 +58,9 @@ public class Game {
                 break;
             case aboutToChosePlayerToAttack:
                 onChosePlayerToAttack();
+                break;
+            case aboutToDecideIfAttackedPlayerShouldDefendHimself:
+                onDecideIfAttackedPlayerShouldDefendHimself();
                 break;
             case aboutToRollDefendingDie:
                 onRollDefendingDie();
@@ -115,9 +119,20 @@ public class Game {
         statusText = "Chose player to attack";
         print(statusText);
         playerManager.setPlayerUnderAttack(decisionManager.chosePlayer());
-        statusText = "Player under attack is: " + playerManager.getPlayerUnderAttack();
+        statusText = "Player under attack is: " + playerManager.getPlayerUnderAttack().getName();
         print(statusText);
-        currentState = gameState.aboutToRollDefendingDie;
+        currentState = gameState.aboutToDecideIfAttackedPlayerShouldDefendHimself;
+    }
+
+    public void onDecideIfAttackedPlayerShouldDefendHimself() {
+        statusText = playerManager.getPlayerUnderAttack() + ", will you defend yourself?";
+        if(decisionManager.willAttackedPlayerDefendHimself()) {
+            currentState = gameState.aboutToRollDefendingDie;
+        } else {
+            playerManager.setLosingPlayer(playerManager.getPlayerUnderAttack());
+            noOfSipsToLosingPlayer = diceManager.getNumberOfSipsToGiveAway();
+            currentState = gameState.aboutToPunishLosingPlayer;
+        }
     }
 
     public void onRollDefendingDie() {
@@ -127,7 +142,8 @@ public class Game {
     }
 
     public void onPunishLosingPlayer() {
-        statusText = "Punish losing player";
+        statusText = playerManager.getLosingPlayer().getName() + " must drink " + noOfSipsToLosingPlayer + " sips";
+        playerManager.punishLosingPlayer(noOfSipsToLosingPlayer);
         print(statusText);
         currentState = gameState.aboutToStartNextPlayersTurn;
     }
@@ -192,5 +208,13 @@ public class Game {
 
     public int getAttackingValue() {
         return diceManager.getNumberOfSipsToGiveAway();
+    }
+
+    public Player getPlayerUnderAttack() {
+        return playerManager.getPlayerUnderAttack();
+    }
+
+    public int getSipsFromPlayerUnderAttack() {
+        return playerManager.getPlayerUnderAttack().getSips();
     }
 }

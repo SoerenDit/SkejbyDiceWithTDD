@@ -1,14 +1,15 @@
 package skejbydice.domain;
 
 public class DecisionManager implements DecisionManagerI {
-    ChosePlayerStrategyI chosePlayerStrategy;
-    RerollOrAttackStrategyI rerollOrAttackStrategy;
-    DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy;
+    private ChosePlayerStrategyI chosePlayerStrategy;
+    private RerollOrAttackStrategyI rerollOrAttackStrategy;
+    private DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy;
     private DefenceStrategy defenceStrategy;
 
     public DecisionManager(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DefenceStrategy defenceStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy) {
         this.chosePlayerStrategy = chosePlayerStrategy;
         this.rerollOrAttackStrategy = rerollOrAttackStrategy;
+        this.defenceStrategy = defenceStrategy;
         this.decideNumberOfTurnsStrategy = decideNumberOfTurnsStrategy;
     }
 
@@ -26,6 +27,9 @@ public class DecisionManager implements DecisionManagerI {
     public boolean isThisTheLastTurn() {
         return decideNumberOfTurnsStrategy.wasThisTheLastTurn();
     }
+
+    @Override
+    public boolean willAttackedPlayerDefendHimself() { return defenceStrategy.willHeDefendHimself(); }
 
     @Override
     public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {

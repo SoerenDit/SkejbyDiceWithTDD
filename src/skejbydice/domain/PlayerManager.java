@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class PlayerManager implements PlayerManagerI {
     ArrayList<Player> players;
     int currentPlayerIdx;
-    Player playerUnderAttack;
+    private Player playerUnderAttack;
+    private Player losingPlayer;
 
     public PlayerManager() {
         players = new ArrayList<>();
@@ -36,6 +37,19 @@ public class PlayerManager implements PlayerManagerI {
     @Override
     public void increaseActivePlayerSips(int numberOfSipsToGiveAway) {
         getCurrentPlayer().drinkSips(numberOfSipsToGiveAway);
+    }
+
+    public void punishLosingPlayer(int numberOfSips) {
+        losingPlayer.drinkSips(numberOfSips);
+    }
+
+    @Override
+    public void setLosingPlayer(Player losingPlayer) {
+        this.losingPlayer = losingPlayer;
+    }
+
+    public Player getLosingPlayer() {
+        return losingPlayer;
     }
 
     @Override

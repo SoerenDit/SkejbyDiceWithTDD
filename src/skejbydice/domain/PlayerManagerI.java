@@ -8,4 +8,6 @@ public interface PlayerManagerI {
     void nextPlayer();
 
     void increaseActivePlayerSips(int numberOfSipsToGiveAway);
+
+    void setLosingPlayer(Player losingPlayer);
 }
