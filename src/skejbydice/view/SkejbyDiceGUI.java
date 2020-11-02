@@ -1,6 +1,6 @@
 package skejbydice.view;
 
-import skejbydice.domain.*;
+import skejbydice.standard.Game;
 
 import javax.swing.*;
 import java.awt.*;

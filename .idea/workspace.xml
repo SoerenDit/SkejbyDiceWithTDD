@@ -20,14 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/skejbydice/domain/NeverDefendYourselfStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManagerI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/PlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/PlayerManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/domain/PlayerManagerI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/ChosePlayerStrategyI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/ChosePlayerStrategyI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/ChosePlayerWithClickStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/strategies/ChosePlayerWithClickStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecideNumberOfTurnsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/DecideNumberOfTurnsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/DecisionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DecisionManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/DecisionManagerI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DefenceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/DefenceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/DiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DieI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/DieI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/DieRollStrategyI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/DieRollStrategyI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/InvalidDieNumberException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/InvalidDieNumberException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/LuckyDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/LuckyDie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/PlayerManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/PlayerManagerI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RandomRollStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/strategies/RandomRollStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RegularDecideNumberOfTurnsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/strategies/RegularDecideNumberOfTurnsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RegularDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/RegularDie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RegularRerollOrAttackStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/strategies/RegularRerollOrAttackStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/domain/RerollOrAttackStrategyI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/RerollOrAttackStrategyI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/view/SkejbyDiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/view/SkejbyDiceGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/AlwaysDefendYourselfStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/AlwaysDefendYourselfStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/AlwaysPlayTwoTurnsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/AlwaysPlayTwoTurnsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/ChoseTheSamePlayerAlwaysStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/ChoseTheSamePlayerAlwaysStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/FixedNumberRollStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/FixedNumberRollStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/NeverDefendYourselfStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/NeverDefendYourselfStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/NeverRerollStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/NeverRerollStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/RerollOnceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/RerollOnceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestAttackAndDefence.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestAttackAndDefence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestChosePlayerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestChosePlayerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestLuckyDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestLuckyDie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestPlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/domain/TestRegularDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestRegularDie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +98,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/hamcrest-library-1.3.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -84,17 +114,32 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestAll">
+  <component name="RunManager" selected="JUnit.TestAll (1)">
+    <configuration name="TestAll (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkejbyDiceWithTDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="skejbydice.standard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="skejbydice.standard" />
+      <option name="MAIN_CLASS_NAME" value="skejbydice.standard.TestAll" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="skejbydice.domain.*" />
+          <option name="PATTERN" value="skejbydice.standard.strategies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="skejbydice.domain" />
-      <option name="MAIN_CLASS_NAME" value="skejbydice.domain.TestAll" />
+      <option name="PACKAGE_NAME" value="skejbydice.framework" />
+      <option name="MAIN_CLASS_NAME" value="skejbydice.framework.TestAll" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,12 +149,12 @@
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="skejbydice.domain.*" />
+          <option name="PATTERN" value="skejbydice.standard.strategies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="skejbydice.domain" />
-      <option name="MAIN_CLASS_NAME" value="skejbydice.domain.TestGame" />
+      <option name="PACKAGE_NAME" value="skejbydice.framework" />
+      <option name="MAIN_CLASS_NAME" value="skejbydice.framework.TestGame" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,12 +164,12 @@
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="skejbydice.domain.*" />
+          <option name="PATTERN" value="skejbydice.standard.strategies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="skejbydice.domain" />
-      <option name="MAIN_CLASS_NAME" value="skejbydice.domain.TestPlayer" />
+      <option name="PACKAGE_NAME" value="skejbydice.framework" />
+      <option name="MAIN_CLASS_NAME" value="skejbydice.framework.TestPlayer" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,29 +190,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSkejbyDiceGUI.testGUI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkejbyDiceWithTDD" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="skejbydice.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="skejbydice.view" />
-      <option name="MAIN_CLASS_NAME" value="skejbydice.view.TestSkejbyDiceGUI" />
-      <option name="METHOD_NAME" value="testGUI" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestAll (1)" />
         <item itemvalue="JUnit.TestAll" />
         <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestPlayer" />
         <item itemvalue="JUnit.TestGame" />
-        <item itemvalue="JUnit.TestSkejbyDiceGUI.testGUI" />
       </list>
     </recent_temporary>
   </component>
@@ -211,10 +240,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597091705620" />
-    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1598267920667">
+    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604317728782">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050@0.0.1920.1050" timestamp="1598267920667" />
+    <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050@0.0.1920.1050" timestamp="1604317728782" />
     <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598602779039">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -223,31 +252,31 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598605483428" />
-    <state x="592" y="222" key="FileChooserDialogImpl" timestamp="1599050884237">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1599892495953">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599050884237" />
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1598606193861" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1599461405026">
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1599892495953" />
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604317763142">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599461405026" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1599461405026">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604317763142" />
+    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604317763142">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599461405026" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1599461405026">
+    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604317763142" />
+    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604317763141">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599461405026" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1599461405026">
+    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604317763141" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604317763142">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599461405026" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604317763142" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -264,19 +293,20 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597094034040" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1599050893554">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="346" y="0" key="SettingsEditor" timestamp="1599659832426">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1599050893554" />
+    <state x="346" y="0" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1599659832426" />
     <state x="531" y="331" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1599049963793">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="531" y="331" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.834@0.0.1536.834" timestamp="1599049963793" />
     <state x="664" y="417" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1050@0.0.1920.1050" timestamp="1597747630296" />
-    <state x="342" y="145" key="new project wizard" timestamp="1597747431097">
+    <state x="342" y="145" key="new project wizard" timestamp="1599892498083">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="342" y="145" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1597747431097" />
+    <state x="342" y="145" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1599892498083" />
     <state x="803" y="282" key="refactoring.ChangeSignatureDialog" timestamp="1599459757550">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

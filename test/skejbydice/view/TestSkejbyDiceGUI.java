@@ -2,7 +2,14 @@ package skejbydice.view;
 
 import org.junit.Before;
 import org.junit.Test;
-import skejbydice.domain.*;
+import skejbydice.standard.strategies.AlwaysDefendYourselfStrategy;
+import skejbydice.standard.Game;
+import skejbydice.standard.Player;
+import skejbydice.standard.RegularDie;
+import skejbydice.standard.strategies.ChosePlayerWithClickStrategy;
+import skejbydice.standard.strategies.RandomRollStrategy;
+import skejbydice.standard.strategies.RegularDecideNumberOfTurnsStrategy;
+import skejbydice.standard.strategies.RegularRerollOrAttackStrategy;
 
 public class TestSkejbyDiceGUI {
     Game game;
