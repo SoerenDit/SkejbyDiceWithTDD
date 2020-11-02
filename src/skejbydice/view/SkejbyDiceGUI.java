@@ -4,8 +4,6 @@ import skejbydice.standard.Game;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 
 public class SkejbyDiceGUI {
@@ -71,48 +69,40 @@ public class SkejbyDiceGUI {
         Box panel = new Box(BoxLayout.X_AXIS);
 
         JButton okButton = new JButton("Ok");
-        okButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                switch (game.getCurrentState()) {
-                    case start:
-                        game.onGameStarted();
-                        updatePlayerStatus();
-                        updateTextPanel();
-                        break;
-                }
+        okButton.addActionListener(e -> {
+            switch (game.getCurrentState()) {
+                case start:
+                    game.onGameStarted();
+                    updatePlayerStatus();
+                    updateTextPanel();
+                    break;
             }
         });
         panel.add(okButton);
 
         JButton rollButton = new JButton("Roll");
-        rollButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                switch (game.getCurrentState()) {
-                    case aboutToRollAttackingDice:
-                        game.onRollAttackingDice();
-                        updatePlayerStatus();
-                        updateTextPanel();
-                        break;
-                }
+        rollButton.addActionListener(e -> {
+            switch (game.getCurrentState()) {
+                case aboutToRollAttackingDice:
+                    game.onRollAttackingDice();
+                    updatePlayerStatus();
+                    updateTextPanel();
+                    break;
             }
         });
         panel.add(rollButton);
 
         JButton drinkButton = new JButton("Drink");
-        rollButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        rollButton.addActionListener(e -> {
 
-            }
         });
         panel.add(drinkButton);
 
         JButton nextButton = new JButton("Next");
-        rollButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                updatePlayerStatus();
-                updateTextPanel();
-                game.gameFlow();
-            }
+        rollButton.addActionListener(e -> {
+            updatePlayerStatus();
+            updateTextPanel();
+            game.gameFlow();
         });
         panel.add(nextButton);
         return panel;
