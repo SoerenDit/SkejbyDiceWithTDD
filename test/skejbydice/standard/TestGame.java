@@ -2,7 +2,7 @@ package skejbydice.standard;
 
 import org.junit.Before;
 import org.junit.Test;
-import skejbydice.standard.factories.AlphaPlayerFactoy;
+import skejbydice.standard.factories.AlphaPlayerFactory;
 import skejbydice.standard.strategies.*;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -11,24 +11,24 @@ import static org.junit.Assert.assertThat;
 
 public class TestGame {
     private Game game;
-    private Player alpha;
-    private Player beta;
+    private Player anders;
+    private Player anna;
     private RegularDie attackingDie1;
     private RegularDie attackingDie2;
     private RegularDie defendingDie;
 
     @Before
     public void setUp() throws InvalidDieNumberException {
-        alpha = new Player("Alpha", new AlphaPlayerFactoy());
-        beta = new Player("Beta", new AlphaPlayerFactoy());
+        // Alpha players always rerolls once, attack the person to the left and always tries to defend himself.
+        anders = new Player("Anders", new AlphaPlayerFactory());
+        anna = new Player("Anna", new AlphaPlayerFactory());
+
         attackingDie1 = new RegularDie(new FixedNumberRollStrategy(3)); //Always rolls 3
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
         defendingDie = new RegularDie(new RandomRollStrategy());
 
-        // This test game starts with Alfa rolling first, then rerolling once, and then attacking Beta. Beta Always tries to defend himself. Stops after two turns.
         game = new Game(new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
-        game.addPlayer(alpha);
-        game.addPlayer(beta);
+
     }
 
     @Test
@@ -37,7 +37,9 @@ public class TestGame {
     }
 
     @Test
-    public void rollingTwiceShouldRoundUpSips() throws InvalidDieNumberException {
+    public void rollingTwiceShouldRoundUpSips() {
+        game.addPlayer(anders);
+        game.addPlayer(anna);
         game.startGame();
         game.rollAttackingDice();
         assertThat(game.getAttackingValue(),is(4)); //First time rolling 3+6 gives 4 sips away
@@ -48,7 +50,9 @@ public class TestGame {
     }
 
     @Test
-    public void rollingTwiceShouldCauseAttackingPlayerToDrinkSips() throws InvalidDieNumberException {
+    public void rollingTwiceShouldCauseAttackingPlayerToDrinkSips() {
+        game.addPlayer(anders);
+        game.addPlayer(anna);
         game.startGame();
         game.rollAttackingDice();
         assertThat(game.getSipsFromActivePlayer(),is(0));
@@ -60,12 +64,13 @@ public class TestGame {
 
     @Test
     public void ifDefendingPlayerChoosesToDrinkFrom6And3AttackHeShouldDrink4Sips () {
-
+        game.addPlayer(anders);
+        game.addPlayer(anna);
         game.startGame();
         game.rollAttackingDice();
         game.decideWhetherToDrinkYourselfOrAttack();
         game.chosePlayerToAttack();
-        assertThat(game.getPlayerUnderAttack(),is(beta));
+        assertThat(game.getPlayerUnderAttack(),is(anna));
         game.onDecideIfAttackedPlayerShouldDefendHimself();
        /*
         game.gameFlow();

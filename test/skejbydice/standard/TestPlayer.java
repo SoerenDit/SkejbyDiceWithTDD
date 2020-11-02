@@ -2,7 +2,7 @@ package skejbydice.standard;
 
 import org.junit.*;
 import org.junit.Test;
-import skejbydice.standard.factories.AlphaPlayerFactoy;
+import skejbydice.standard.factories.AlphaPlayerFactory;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -13,7 +13,7 @@ public class TestPlayer {
 
     @Before
     public void setUp() {
-        p = new Player("Søren", new AlphaPlayerFactoy());
+        p = new Player("Søren", new AlphaPlayerFactory());
     }
 
     @Test

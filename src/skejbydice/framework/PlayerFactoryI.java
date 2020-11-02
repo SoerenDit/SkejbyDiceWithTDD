@@ -6,11 +6,7 @@ public interface PlayerFactoryI {
 
     ChosePlayerStrategyI createChosePlayerStrategy();
 
-    DecideNumberOfTurnsStrategy createDesignNumberOfTurnsStrategy();
-
     DefenceStrategy createDefenceStrategy();
-
-    DieRollStrategyI createDieRollStrategy();
 
     RerollOrAttackStrategyI createRerollOrAttackStrategy();
 }
