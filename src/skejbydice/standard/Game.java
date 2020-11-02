@@ -1,17 +1,14 @@
 package skejbydice.standard;
 
-import skejbydice.framework.strategies.ChosePlayerStrategyI;
-import skejbydice.framework.strategies.DecideNumberOfTurnsStrategy;
-import skejbydice.framework.strategies.RerollOrAttackStrategyI;
-
 public class Game {
     private PlayerManager playerManager;
     private DiceManager diceManager;
-    private DecisionManager decisionManager;
     private gameState currentState;
     private String statusText;
     private boolean print = true; //Only for testing purposes
     private int noOfSipsToLosingPlayer;
+    private int currentTurn;
+    private int turnsToPlay;
 
     public enum gameState {
         idle,
@@ -27,11 +24,12 @@ public class Game {
         gameFinished
     }
 
-    public Game(DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy,
+    public Game(int turnsToPlay,
                 RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         playerManager = new PlayerManager();
-        decisionManager = new DecisionManager(decideNumberOfTurnsStrategy);
+        currentTurn = 1;
+        this.turnsToPlay = turnsToPlay;
         currentState = gameState.idle;
     }
 
@@ -147,9 +145,10 @@ public class Game {
     public void onStartNextPlayersTurn() {
         statusText = "Start next players turn";
         print(statusText);
-        if (decisionManager.isThisTheLastTurn()) {
+        if (currentTurn == turnsToPlay) {
             currentState = gameState.gameFinished;
         } else {
+            currentTurn++;
             playerManager.nextPlayer();
             currentState = gameState.turnStarted;
         }

@@ -27,7 +27,7 @@ public class TestGame {
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
         defendingDie = new RegularDie(new RandomRollStrategy());
 
-        game = new Game(new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
+        game = new Game(2, attackingDie1, attackingDie2, defendingDie);
 
     }
 

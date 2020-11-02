@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/PlayerFactoryI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/PlayerFactoryI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/DecisionManagerI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/DecideNumberOfTurnsStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/DecisionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/strategies/RegularDecideNumberOfTurnsStrategy.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/AlphaPlayerFactoy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/factories/AlphaPlayerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/AlwaysPlayTwoTurnsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/strategies/AlwaysPlayTwoTurnsStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,35 +228,35 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="178" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604320896530" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604333542655">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604334655141">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604333542655" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604334655141" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1599892495953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599050884237" />
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1599892495953" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604334063510">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604334618281">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604334063510" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604334063509">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604334618281" />
+    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604334618281">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604334063509" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604334063509">
+    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604334618281" />
+    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604334618281">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604334063509" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604334063509">
+    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604334618281" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604334618281">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604334063509" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604334618281" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
