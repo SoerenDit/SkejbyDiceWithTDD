@@ -2,7 +2,7 @@ package skejbydice.standard;
 
 import org.junit.Before;
 import org.junit.Test;
-import skejbydice.framework.factories.AlphaPlayerFactoy;
+import skejbydice.standard.factories.AlphaPlayerFactoy;
 import skejbydice.standard.strategies.*;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -26,7 +26,7 @@ public class TestGame {
         defendingDie = new RegularDie(new RandomRollStrategy());
 
         // This test game starts with Alfa rolling first, then rerolling once, and then attacking Beta. Beta Always tries to defend himself. Stops after two turns.
-        game = new Game(new ChoseTheSamePlayerAlwaysStrategy(beta), new RerollOnceStrategy(), new NeverDefendYourselfStrategy(), new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
+        game = new Game(new AlwaysPlayTwoTurnsStrategy(), attackingDie1, attackingDie2, defendingDie);
         game.addPlayer(alpha);
         game.addPlayer(beta);
     }
@@ -60,9 +60,9 @@ public class TestGame {
 
     @Test
     public void ifDefendingPlayerChoosesToDrinkFrom6And3AttackHeShouldDrink4Sips () {
+
         game.startGame();
         game.rollAttackingDice();
-        game.setRerollOrAttackStrategy(new NeverRerollStrategy());
         game.decideWhetherToDrinkYourselfOrAttack();
         game.chosePlayerToAttack();
         assertThat(game.getPlayerUnderAttack(),is(beta));

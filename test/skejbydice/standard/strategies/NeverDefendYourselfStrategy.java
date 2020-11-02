@@ -4,7 +4,7 @@ import skejbydice.framework.strategies.DefenceStrategy;
 
 public class NeverDefendYourselfStrategy implements DefenceStrategy {
     @Override
-    public boolean willHeDefendHimself() {
+    public boolean willYouDefendYourself() {
         return false;
     }
 }

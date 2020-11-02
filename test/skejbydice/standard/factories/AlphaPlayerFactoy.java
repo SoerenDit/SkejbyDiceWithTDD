@@ -1,12 +1,15 @@
-package skejbydice.framework.factories;
+package skejbydice.standard.factories;
 
 import skejbydice.framework.PlayerFactoryI;
 import skejbydice.framework.strategies.*;
+import skejbydice.standard.strategies.AlwaysDefendYourselfStrategy;
+import skejbydice.standard.strategies.ChosePlayerToTheLeftStrategy;
+import skejbydice.standard.strategies.RerollOnceStrategy;
 
 public class AlphaPlayerFactoy implements PlayerFactoryI {
     @Override
     public ChosePlayerStrategyI createChosePlayerStrategy() {
-        return null;
+        return new ChosePlayerToTheLeftStrategy();
     }
 
     @Override
@@ -16,7 +19,7 @@ public class AlphaPlayerFactoy implements PlayerFactoryI {
 
     @Override
     public DefenceStrategy createDefenceStrategy() {
-        return null;
+        return new AlwaysDefendYourselfStrategy();
     }
 
     @Override
@@ -26,6 +29,6 @@ public class AlphaPlayerFactoy implements PlayerFactoryI {
 
     @Override
     public RerollOrAttackStrategyI createRerollOrAttackStrategy() {
-        return null;
+        return new RerollOnceStrategy();
     }
 }

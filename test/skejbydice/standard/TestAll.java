@@ -10,7 +10,6 @@ import org.junit.runners.Suite;
                 TestPlayer.class,
                 TestGame.class,
                 TestAttackAndDefence.class,
-                TestChosePlayerStrategy.class,
                 TestPlayerManager.class
                 } )
 

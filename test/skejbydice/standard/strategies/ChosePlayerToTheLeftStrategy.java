@@ -1,11 +1,13 @@
 package skejbydice.standard.strategies;
 
 import skejbydice.framework.strategies.ChosePlayerStrategyI;
+import skejbydice.standard.Game;
 import skejbydice.standard.Player;
 
-public class ChosePlayerWithClickStrategy implements ChosePlayerStrategyI {
+public class ChosePlayerToTheLeftStrategy implements ChosePlayerStrategyI {
+
     @Override
     public int chosePlayer() {
-        return 0;
+        return 1;
     }
 }

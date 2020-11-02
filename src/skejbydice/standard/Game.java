@@ -2,7 +2,6 @@ package skejbydice.standard;
 
 import skejbydice.framework.strategies.ChosePlayerStrategyI;
 import skejbydice.framework.strategies.DecideNumberOfTurnsStrategy;
-import skejbydice.framework.strategies.DefenceStrategy;
 import skejbydice.framework.strategies.RerollOrAttackStrategyI;
 
 public class Game {
@@ -13,10 +12,6 @@ public class Game {
     private String statusText;
     private boolean print = true; //Only for testing purposes
     private int noOfSipsToLosingPlayer;
-
-    public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {
-        decisionManager.setRerollOrAttackStrategy(rerollOrAttackStrategy);
-    }
 
     public enum gameState {
         idle,
@@ -32,11 +27,11 @@ public class Game {
         gameFinished
     }
 
-    public Game(ChosePlayerStrategyI chosePlayerStrategy, RerollOrAttackStrategyI rerollOrAttackStrategy, DefenceStrategy defenceStrategy, DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy,
+    public Game(DecideNumberOfTurnsStrategy decideNumberOfTurnsStrategy,
                 RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         diceManager = new DiceManager(attackingDie1, attackingDie2, defendingDie);
         playerManager = new PlayerManager();
-        decisionManager = new DecisionManager(chosePlayerStrategy, rerollOrAttackStrategy, defenceStrategy, decideNumberOfTurnsStrategy);
+        decisionManager = new DecisionManager(decideNumberOfTurnsStrategy);
         currentState = gameState.idle;
     }
 
@@ -105,7 +100,7 @@ public class Game {
     public void decideWhetherToDrinkYourselfOrAttack() {
         statusText = "Do you want to drink yourself or to attack?";
         print(statusText);
-        if (decisionManager.willYouDrinkAndReroll()) {
+        if (playerManager.getCurrentPlayer().willYouDrinkAndReroll()) {
             playerManager.increaseActivePlayerSips(diceManager.getNumberOfSipsToGiveAway());
             diceManager.setFirstAttackingRoll(false);
             currentState = gameState.aboutToRollAttackingDice;
@@ -117,7 +112,9 @@ public class Game {
     public void chosePlayerToAttack() {
         statusText = "Chose player to attack";
         print(statusText);
-        playerManager.setPlayerUnderAttack(decisionManager.chosePlayer());
+        int indexOfCurrentPlayer = playerManager.getCurrentPlayerIdx();
+        Player playerToBeAttacked = playerManager.getPlayer(indexOfCurrentPlayer + playerManager.getCurrentPlayer().chosePlayer());
+        playerManager.setPlayerUnderAttack(playerToBeAttacked);
         statusText = "Player under attack is: " + playerManager.getPlayerUnderAttack().getName();
         print(statusText);
         currentState = gameState.aboutToDecideIfAttackedPlayerShouldDefendHimself;
@@ -125,7 +122,7 @@ public class Game {
 
     public void onDecideIfAttackedPlayerShouldDefendHimself() {
         statusText = playerManager.getPlayerUnderAttack() + ", will you defend yourself?";
-        if(decisionManager.willAttackedPlayerDefendHimself()) {
+        if(playerManager.getCurrentPlayer().willYouDefendYourself()) {
             currentState = gameState.aboutToRollDefendingDie;
         } else {
             playerManager.setLosingPlayer(playerManager.getPlayerUnderAttack());

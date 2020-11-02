@@ -2,7 +2,7 @@ package skejbydice.standard;
 
 import org.junit.*;
 import org.junit.Test;
-import skejbydice.framework.factories.AlphaPlayerFactoy;
+import skejbydice.standard.factories.AlphaPlayerFactoy;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;

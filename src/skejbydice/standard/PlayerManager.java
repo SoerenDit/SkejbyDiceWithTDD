@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class PlayerManager implements PlayerManagerI {
     ArrayList<Player> players;
-    int currentPlayerIdx;
+    private int currentPlayerIdx;
     private Player playerUnderAttack;
     private Player losingPlayer;
 
@@ -58,5 +58,13 @@ public class PlayerManager implements PlayerManagerI {
     @Override
     public void addPlayer(Player player) {
         players.add(player);
+    }
+
+    public int getCurrentPlayerIdx() {
+        return currentPlayerIdx;
+    }
+
+    public Player getPlayer(int i) {
+        return players.get(i);
     }
 }
