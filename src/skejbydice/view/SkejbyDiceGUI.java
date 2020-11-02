@@ -71,10 +71,8 @@ public class SkejbyDiceGUI {
         JButton okButton = new JButton("Ok");
         okButton.addActionListener(e -> {
             switch (game.getCurrentState()) {
-                case start:
-                    game.onGameStarted();
-                    updatePlayerStatus();
-                    updateTextPanel();
+                case gameStarted:
+                    onGameStarted();
                     break;
             }
         });
@@ -84,7 +82,7 @@ public class SkejbyDiceGUI {
         rollButton.addActionListener(e -> {
             switch (game.getCurrentState()) {
                 case aboutToRollAttackingDice:
-                    game.onRollAttackingDice();
+                    game.rollAttackingDice();
                     updatePlayerStatus();
                     updateTextPanel();
                     break;
@@ -102,9 +100,15 @@ public class SkejbyDiceGUI {
         rollButton.addActionListener(e -> {
             updatePlayerStatus();
             updateTextPanel();
-            game.gameFlow();
+           // game.gameFlow();
         });
         panel.add(nextButton);
         return panel;
+    }
+
+    private void onGameStarted() {
+        game.startGame();
+        updatePlayerStatus();
+        updateTextPanel();
     }
 }

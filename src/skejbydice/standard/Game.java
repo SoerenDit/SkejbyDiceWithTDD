@@ -11,7 +11,7 @@ public class Game {
     private DecisionManager decisionManager;
     private gameState currentState;
     private String statusText;
-    private boolean print; //Only for testing purposes
+    private boolean print = true; //Only for testing purposes
     private int noOfSipsToLosingPlayer;
 
     public void setRerollOrAttackStrategy(RerollOrAttackStrategyI rerollOrAttackStrategy) {
@@ -20,7 +20,7 @@ public class Game {
 
     public enum gameState {
         idle,
-        start,
+        gameStarted,
         turnStarted,
         aboutToRollAttackingDice,
         aboutToDecideWhetherToDrinkYourselfOrAttack,
@@ -40,29 +40,24 @@ public class Game {
         currentState = gameState.idle;
     }
 
-    public void start(boolean print) {
-        this.print = print;
-        currentState = gameState.start;
-        gameFlow();
-    }
-
     //****************** Game Flow ********************//
+    /**
     public void gameFlow() {
         switch (currentState) {
             case start:
-                onGameStarted();
+                startGame();
                 break;
             case turnStarted:
-                onTurnStarted();
+                startTurn();
                 break;
             case aboutToRollAttackingDice:
-                onRollAttackingDice();
+                rollAttackingDice();
                 break;
             case aboutToDecideWhetherToDrinkYourselfOrAttack:
-                onDecideWhetherToDrinkYourselfOrAttack();
+                decideWhetherToDrinkYourselfOrAttack();
                 break;
             case aboutToChosePlayerToAttack:
-                onChosePlayerToAttack();
+                chosePlayerToAttack();
                 break;
             case aboutToDecideIfAttackedPlayerShouldDefendHimself:
                 onDecideIfAttackedPlayerShouldDefendHimself();
@@ -81,22 +76,21 @@ public class Game {
                 break;
         }
     }
-
-    public void onGameStarted() {
+     */
+    public void startGame() {
         statusText = "Game started";
-        currentState = gameState.turnStarted;
+        currentState = gameState.gameStarted;
         print(statusText);
     }
 
-    public void onTurnStarted() {
+    public void startTurn() {
         statusText = "Turn started. Roll the attacking dice!";
         currentState = gameState.aboutToRollAttackingDice;
-        if (print) {
-            print(statusText);
-        }
+        print(statusText);
+
     }
 
-    public void onRollAttackingDice() {
+    public void rollAttackingDice() {
         statusText = "Roll attacking dice";
         print(statusText);
         diceManager.rollAttackingDice();
@@ -108,7 +102,7 @@ public class Game {
         currentState = gameState.aboutToDecideWhetherToDrinkYourselfOrAttack;
     }
 
-    public void onDecideWhetherToDrinkYourselfOrAttack() {
+    public void decideWhetherToDrinkYourselfOrAttack() {
         statusText = "Do you want to drink yourself or to attack?";
         print(statusText);
         if (decisionManager.willYouDrinkAndReroll()) {
@@ -120,7 +114,7 @@ public class Game {
         }
     }
 
-    public void onChosePlayerToAttack() {
+    public void chosePlayerToAttack() {
         statusText = "Chose player to attack";
         print(statusText);
         playerManager.setPlayerUnderAttack(decisionManager.chosePlayer());

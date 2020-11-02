@@ -23,10 +23,9 @@ public class TestSkejbyDiceGUI {
 
     @Test
     public void testGUI() throws InterruptedException {
-        game.start(false);
+        game.startGame();
         new SkejbyDiceGUI(game);
     }
-
 }
 
 
