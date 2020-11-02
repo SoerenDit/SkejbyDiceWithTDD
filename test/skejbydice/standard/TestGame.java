@@ -2,6 +2,7 @@ package skejbydice.standard;
 
 import org.junit.Before;
 import org.junit.Test;
+import skejbydice.framework.factories.AlphaPlayerFactoy;
 import skejbydice.standard.strategies.*;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -18,8 +19,8 @@ public class TestGame {
 
     @Before
     public void setUp() throws InvalidDieNumberException {
-        alpha = new Player("Alpha");
-        beta = new Player("Beta");
+        alpha = new Player("Alpha", new AlphaPlayerFactoy());
+        beta = new Player("Beta", new AlphaPlayerFactoy());
         attackingDie1 = new RegularDie(new FixedNumberRollStrategy(3)); //Always rolls 3
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
         defendingDie = new RegularDie(new RandomRollStrategy());

@@ -1,5 +1,6 @@
 package skejbydice.standard;
 
+import skejbydice.framework.PlayerFactoryI;
 import skejbydice.standard.LuckyDie;
 import skejbydice.standard.strategies.RandomRollStrategy;
 
@@ -9,7 +10,7 @@ public class Player {
     private String name;
     private LuckyDie luckyDie;
 
-    public Player(String name) {
+    public Player(String name, PlayerFactoryI playerFactoryI) {
         this.name = name;
         sips = 0;
         beers = 0;

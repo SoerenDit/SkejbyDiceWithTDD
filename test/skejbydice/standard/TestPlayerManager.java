@@ -2,6 +2,7 @@ package skejbydice.standard;
 
 import org.junit.*;
 import org.junit.Test;
+import skejbydice.framework.factories.AlphaPlayerFactoy;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -13,8 +14,8 @@ public class TestPlayerManager {
 
     @Before
     public void setUp() {
-        alpha = new Player("Alpha");
-        beta = new Player("Beta");
+        alpha = new Player("Alpha", new AlphaPlayerFactoy());
+        beta = new Player("Beta", new AlphaPlayerFactoy());
         playerManager = new PlayerManager();
         playerManager.addPlayer(alpha);
         playerManager.addPlayer(beta);

@@ -83,7 +83,7 @@ public class Game {
         print(statusText);
     }
 
-    public void startTurn() {
+    public void startNewTurn() {
         statusText = "Turn started. Roll the attacking dice!";
         currentState = gameState.aboutToRollAttackingDice;
         print(statusText);
