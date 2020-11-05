@@ -49,5 +49,4 @@ public class TestLuckyDie {
         lucky.decreaseByOne();
         assertThat(lucky.getFaceUpNumber(),is(1));
     }
-
 }
