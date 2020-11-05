@@ -21,9 +21,30 @@
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/PlayerFactoryI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/PlayerManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/PlayerManagerI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/ChosePlayerStrategyI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/DefenceStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/RerollOrAttackStrategyI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/DiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/DiceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/RegularDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/RegularDie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/strategies/ChosePlayerWithClickStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/strategies/RegularRerollOrAttackStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestAttackAndDefence.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestAttackAndDefence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/BetaPlayerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/factories/BetaPlayerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/AlphaPlayerFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/BetaPlayerFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/AlwaysDefendYourselfStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/ChosePlayerToTheLeftStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/NeverDefendYourselfStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/NeverRerollStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/RerollOnceStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,11 +225,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604333791126" />
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1604606695458">
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1604611441007">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="612" y="183" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1599419544483" />
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1604606695458" />
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1604611441007" />
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1597091705620">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -225,35 +246,35 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="178" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604320896530" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604334655141">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604608590546">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604334655141" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604608590546" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1599892495953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599050884237" />
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1599892495953" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604607036205">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604611832880">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604607036205">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
+    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604611832880">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604607036205">
+    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
+    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604611832880">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604607036205">
+    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604611832880">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

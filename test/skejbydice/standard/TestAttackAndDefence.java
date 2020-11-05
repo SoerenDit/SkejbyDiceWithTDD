@@ -26,7 +26,7 @@ public class TestAttackAndDefence {
     public void secondAttackingRollShouldRoundUpWhenDecidingNumberOfSips() throws InvalidDieNumberException {
         DiceManager diceManager = new DiceManager(die(3),die(6),die(6));
         diceManager.rollAttackingDice();
-        diceManager.setFirstAttackingRoll(false);
+        diceManager.rollAttackingDice();
         assertThat(diceManager.getNumberOfSipsToGiveAway(),is(5));
     }
 
@@ -34,7 +34,7 @@ public class TestAttackAndDefence {
     public void rollingA6ShouldDefendYouFrom3And6Attack() throws InvalidDieNumberException {
         DiceManager diceManager = new DiceManager(die(3),die(6),die(6));
         diceManager.rollAttackingDice();
-        diceManager.rollDefendingDice();
+        diceManager.rollDefenceDie();
         assertTrue(diceManager.isDefenceSuccesful());
     }
 
@@ -42,7 +42,7 @@ public class TestAttackAndDefence {
     public void rollingA5ShouldNotDefendYouFrom3And6Attack() throws InvalidDieNumberException {
         DiceManager diceManager = new DiceManager(die(3),die(6),die(5));
         diceManager.rollAttackingDice();
-        diceManager.rollDefendingDice();
+        diceManager.rollDefenceDie();
         assertFalse(diceManager.isDefenceSuccesful());
     }
 

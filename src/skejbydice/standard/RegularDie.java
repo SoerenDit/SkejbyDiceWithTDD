@@ -4,11 +4,11 @@ import skejbydice.framework.DieI;
 import skejbydice.framework.strategies.DieRollStrategyI;
 
 public class RegularDie implements DieI {
-    protected int faceUpNumber;
+    private int faceUpNumber;
     private DieRollStrategyI dieRollStrategy;
 
     public RegularDie(DieRollStrategyI dieRollStrategy) {
-        faceUpNumber = 1;
+        faceUpNumber = 0;
         this.dieRollStrategy = dieRollStrategy;
     }
 

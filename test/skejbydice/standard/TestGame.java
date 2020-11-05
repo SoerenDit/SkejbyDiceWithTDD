@@ -2,8 +2,6 @@ package skejbydice.standard;
 
 import org.junit.Before;
 import org.junit.Test;
-import skejbydice.standard.factories.AlphaPlayerFactory;
-import skejbydice.standard.factories.BetaPlayerFactory;
 import skejbydice.standard.strategies.*;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -24,13 +22,12 @@ public class TestGame {
 
     @Before
     public void setUp() throws InvalidDieNumberException {
-        // Alpha players always rerolls once, attack the person to the left and always tries to defend himself.
-        anders = new Player("Anders", new AlphaPlayerFactory());
-        anna = new Player("Anna", new AlphaPlayerFactory());
 
-        // Beta players never rerolls, attack the person to the left, and never defends themselves.
-        bjarne = new Player("Bjarne", new BetaPlayerFactory());
-        britta = new Player("Britta", new BetaPlayerFactory());
+        anders = new Player("Anders");
+        anna = new Player("Anna");
+
+        bjarne = new Player("Bjarne");
+        britta = new Player("Britta");
 
         attackingDie1 = new RegularDie(new FixedNumberRollStrategy(3)); //Always rolls 3
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
@@ -59,8 +56,6 @@ public class TestGame {
         game.startGame();
         game.rollAttackingDice();
         assertThat(game.getAttackingValue(),is(4)); //First time rolling 3+6 gives 4 sips away
-        game.decideWhetherToDrinkYourselfOrAttack();
-        assertThat(game.getCurrentState(),is(Game.gameState.aboutToRollAttackingDice));
         game.rollAttackingDice();
         assertThat(game.getAttackingValue(),is(5)); //Second time rolling 3+6 gives 5 sips away
     }
@@ -72,22 +67,19 @@ public class TestGame {
         game.startGame();
         game.rollAttackingDice();
         assertThat(game.getSipsFromActivePlayer(),is(0));
-        game.decideWhetherToDrinkYourselfOrAttack();
+        game.rollAttackingDice();
         assertThat(game.getSipsFromActivePlayer(),is(4)); 
     }
 
     @Test
     public void ifDefendingPlayerChoosesToDrinkFrom6And3AttackHeShouldDrink4Sips () {
-        game.addPlayer(bjarne); // Never rerolls
-        game.addPlayer(britta); // Never defends himself
+        game.addPlayer(bjarne);
+        game.addPlayer(britta);
         game.startGame();
         game.rollAttackingDice();
-        game.decideWhetherToDrinkYourselfOrAttack();
-        game.chosePlayerToAttack();
+        game.attackPlayer(britta);
         assertThat(game.getPlayerUnderAttack(),is(britta));
-        game.onDecideIfAttackedPlayerShouldDefendHimself();
-        game.onRollDefendingDie();
-        game.onPunishLosingPlayer();
+        game.punishLosingPlayer();
         assertThat(game.getSipsFromPlayerUnderAttack(),is(4));
     }
 }

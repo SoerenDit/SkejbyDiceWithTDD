@@ -11,5 +11,5 @@ public interface PlayerManagerI {
 
     void increaseActivePlayerSips(int numberOfSipsToGiveAway);
 
-    void setLosingPlayer(Player losingPlayer);
+    void makePlayerDrink(Player losingPlayer, int i);
 }

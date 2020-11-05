@@ -1,13 +1,12 @@
 package skejbydice.standard;
 
-import skejbydice.standard.RegularDie;
 
 public class DiceManager {
     private RegularDie attackingDie1;
     private RegularDie attackingDie2;
     private RegularDie defendingDie;
-    private boolean isItFirstAttackingRoll = true;
-
+    private int numberOfAttackRolls = 0;
+    private boolean hasDefended = false;
 
     public DiceManager(RegularDie attackingDie1, RegularDie attackingDie2, RegularDie defendingDie) {
         this.attackingDie1 = attackingDie1;
@@ -18,27 +17,27 @@ public class DiceManager {
     public void rollAttackingDice() {
         attackingDie1.roll();
         attackingDie2.roll();
+        numberOfAttackRolls++;
     }
 
-    public void rollDefendingDice() {
+    public void rollDefenceDie() {
         defendingDie.roll();
+        hasDefended = true;
     }
 
     public int getNumberOfSipsToGiveAway() {
-        if(isItFirstAttackingRoll) return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber())/2;
+        if(numberOfAttackRolls == 1) return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber())/2;
         else return (attackingDie1.getFaceUpNumber()+attackingDie2.getFaceUpNumber()+1)/2;
     }
 
-    public void setFirstAttackingRoll(boolean b) {
-        isItFirstAttackingRoll = b;
+    public boolean hasDefended() { return hasDefended; }
+
+    public int getNumberOfAttackRolls() {
+        return numberOfAttackRolls;
     }
 
     public boolean isItFirstAttackingRoll() {
-        return isItFirstAttackingRoll;
-    }
-
-    public String getAttackingDiceNumbers() {
-        return "" + attackingDie1.getFaceUpNumber() + " and " + attackingDie2.getFaceUpNumber();
+        return numberOfAttackRolls == 0;
     }
 
     public boolean isDefenceSuccesful() {
@@ -46,4 +45,9 @@ public class DiceManager {
     }
 
 
+    public boolean wasDefenceSuccesfull() {
+        if(defendingDie.getFaceUpNumber() == 0) return false;
+        if(defendingDie.getFaceUpNumber() >= Math.max(attackingDie1.getFaceUpNumber(),attackingDie2.getFaceUpNumber())) return true;
+        else return false;
+    }
 }

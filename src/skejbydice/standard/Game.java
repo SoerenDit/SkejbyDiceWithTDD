@@ -19,12 +19,12 @@ public class Game {
         gameStarted,
         turnStarted,
         aboutToRollAttackingDice,
-        aboutToDecideWhetherToDrinkYourselfOrAttack,
+        attackingDiceRolled,
         aboutToChosePlayerToAttack,
-        aboutToDecideIfAttackedPlayerShouldDefendHimself,
+        playerHasBeenAttacked,
         aboutToRollDefendingDie,
-        aboutToPunishLosingPlayer,
-        aboutToStartNextPlayersTurn,
+        playerIsDefending,
+        playerHasBeenPunished,
         gameFinished
     }
 
@@ -80,70 +80,45 @@ public class Game {
         print(statusText);
     }
 
-    public void startNewTurn() {
-        statusText = "Turn started. Roll the attacking dice!";
-        currentState = gameState.aboutToRollAttackingDice;
-        print(statusText);
-
-    }
-
     public void rollAttackingDice() {
+        if(! diceManager.isItFirstAttackingRoll()) {
+            playerManager.increaseActivePlayerSips(diceManager.getNumberOfSipsToGiveAway());
+
+        }
         statusText = "Roll attacking dice";
-        print(statusText);
         diceManager.rollAttackingDice();
-        print("Attacking dice: " + diceManager.getAttackingDiceNumbers());
         if (diceManager.isItFirstAttackingRoll())
             print("This is the first attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
         else
             print("This is the second attacking role, so you can give " + diceManager.getNumberOfSipsToGiveAway() + " sips away");
-        currentState = gameState.aboutToDecideWhetherToDrinkYourselfOrAttack;
+        currentState = gameState.attackingDiceRolled;
+
     }
 
-    public void decideWhetherToDrinkYourselfOrAttack() {
-        statusText = "Do you want to drink yourself or to attack?";
-        print(statusText);
-        if (playerManager.getCurrentPlayer().willYouDrinkAndReroll()) {
-            playerManager.increaseActivePlayerSips(diceManager.getNumberOfSipsToGiveAway());
-            diceManager.setFirstAttackingRoll(false);
-            currentState = gameState.aboutToRollAttackingDice;
-        } else {
-            currentState = gameState.aboutToChosePlayerToAttack;
-        }
-    }
-
-    public void chosePlayerToAttack() {
+    public void attackPlayer(Player player) {
         statusText = "Chose player to attack";
         print(statusText);
-        int indexOfCurrentPlayer = playerManager.getCurrentPlayerIdx();
-        Player playerToBeAttacked = playerManager.getPlayer(indexOfCurrentPlayer + playerManager.getCurrentPlayer().chosePlayer());
-        playerManager.setPlayerUnderAttack(playerToBeAttacked);
-        statusText = "Player under attack is: " + playerManager.getPlayerUnderAttack().getName();
+        playerManager.setPlayerUnderAttack(player);
+        statusText = "Player under attack is: " + player;
         print(statusText);
-        currentState = gameState.aboutToDecideIfAttackedPlayerShouldDefendHimself;
+        currentState = gameState.playerHasBeenAttacked;
     }
 
-    public void onDecideIfAttackedPlayerShouldDefendHimself() {
-        statusText = playerManager.getPlayerUnderAttack() + ", will you defend yourself?";
-        if(playerManager.getCurrentPlayer().willYouDefendYourself()) {
-            currentState = gameState.aboutToRollDefendingDie;
-        } else {
-            playerManager.setLosingPlayer(playerManager.getPlayerUnderAttack());
-            noOfSipsToLosingPlayer = diceManager.getNumberOfSipsToGiveAway();
-            currentState = gameState.aboutToPunishLosingPlayer;
-        }
-    }
-
-    public void onRollDefendingDie() {
+    public void tryToDefendYourself() {
         statusText = "Roll defending die";
-        print(statusText);
-        currentState = gameState.aboutToPunishLosingPlayer;
+        diceManager.rollDefenceDie();
+        currentState = gameState.playerIsDefending;
     }
 
-    public void onPunishLosingPlayer() {
-        statusText = playerManager.getLosingPlayer().getName() + " must drink " + noOfSipsToLosingPlayer + " sips";
-        playerManager.punishLosingPlayer(noOfSipsToLosingPlayer);
-        print(statusText);
-        currentState = gameState.aboutToStartNextPlayersTurn;
+    public void punishLosingPlayer() {
+        if(! diceManager.hasDefended()) {
+            playerManager.makePlayerDrink(playerManager.getPlayerUnderAttack(),diceManager.getNumberOfSipsToGiveAway());
+        } else if (diceManager.wasDefenceSuccesfull()) {
+            playerManager.makePlayerDrink(playerManager.getCurrentPlayer(),1);
+        } else {
+            playerManager.makePlayerDrink(playerManager.getPlayerUnderAttack(),diceManager.getNumberOfSipsToGiveAway()+1);
+        }
+        currentState = gameState.playerHasBeenPunished;
     }
 
     public void onStartNextPlayersTurn() {

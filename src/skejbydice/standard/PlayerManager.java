@@ -9,7 +9,6 @@ public class PlayerManager implements PlayerManagerI {
     ArrayList<Player> players;
     private int currentPlayerIdx;
     private Player playerUnderAttack;
-    private Player losingPlayer;
 
     public PlayerManager() {
         players = new ArrayList<>();
@@ -42,17 +41,9 @@ public class PlayerManager implements PlayerManagerI {
         getCurrentPlayer().drinkSips(numberOfSipsToGiveAway);
     }
 
-    public void punishLosingPlayer(int numberOfSips) {
-        losingPlayer.drinkSips(numberOfSips);
-    }
-
     @Override
-    public void setLosingPlayer(Player losingPlayer) {
-        this.losingPlayer = losingPlayer;
-    }
-
-    public Player getLosingPlayer() {
-        return losingPlayer;
+    public void makePlayerDrink(Player player, int sips) {
+        player.drinkSips(sips);
     }
 
     @Override
@@ -60,11 +51,4 @@ public class PlayerManager implements PlayerManagerI {
         players.add(player);
     }
 
-    public int getCurrentPlayerIdx() {
-        return currentPlayerIdx;
-    }
-
-    public Player getPlayer(int i) {
-        return players.get(i);
-    }
 }
