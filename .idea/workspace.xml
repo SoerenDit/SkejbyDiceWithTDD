@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/BetaPlayerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/factories/BetaPlayerFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestGame.rollingTwiceShouldCauseAttackingPlayerToDrinkSips">
+  <component name="RunManager" selected="JUnit.TestAll (1)">
     <configuration name="TestAll (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkejbyDiceWithTDD" />
       <extension name="coverage">
@@ -159,10 +161,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestGame.rollingTwiceShouldCauseAttackingPlayerToDrinkSips" />
         <item itemvalue="JUnit.TestAll (1)" />
-        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestAll" />
+        <item itemvalue="JUnit.TestGame.rollingTwiceShouldCauseAttackingPlayerToDrinkSips" />
+        <item itemvalue="JUnit.TestSkejbyDiceGUI" />
         <item itemvalue="JUnit.TestPlayer" />
       </list>
     </recent_temporary>
@@ -202,11 +204,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604333791126" />
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1604332447561">
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1604606695458">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="612" y="183" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1599419544483" />
-    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1604332447561" />
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1604606695458" />
     <state x="690" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1597091705620">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -232,26 +234,26 @@
     </state>
     <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599050884237" />
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1599892495953" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604337179094">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604607036205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604337179094" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604337179094">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
+    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604607036205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604337179094" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604337179094">
+    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
+    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604607036205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604337179094" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604337179094">
+    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604607036205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604337179094" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604607036205" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

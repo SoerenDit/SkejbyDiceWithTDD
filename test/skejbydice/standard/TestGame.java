@@ -3,6 +3,7 @@ package skejbydice.standard;
 import org.junit.Before;
 import org.junit.Test;
 import skejbydice.standard.factories.AlphaPlayerFactory;
+import skejbydice.standard.factories.BetaPlayerFactory;
 import skejbydice.standard.strategies.*;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -13,9 +14,13 @@ public class TestGame {
     private Game game;
     private Player anders;
     private Player anna;
+    private Player bjarne;
+
+
     private RegularDie attackingDie1;
     private RegularDie attackingDie2;
     private RegularDie defendingDie;
+    private Player britta;
 
     @Before
     public void setUp() throws InvalidDieNumberException {
@@ -23,9 +28,13 @@ public class TestGame {
         anders = new Player("Anders", new AlphaPlayerFactory());
         anna = new Player("Anna", new AlphaPlayerFactory());
 
+        // Beta players never rerolls, attack the person to the left, and never defends themselves.
+        bjarne = new Player("Bjarne", new BetaPlayerFactory());
+        britta = new Player("Britta", new BetaPlayerFactory());
+
         attackingDie1 = new RegularDie(new FixedNumberRollStrategy(3)); //Always rolls 3
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
-        defendingDie = new RegularDie(new RandomRollStrategy());
+        defendingDie = new RegularDie(new FixedNumberRollStrategy(3));
 
         game = new Game(2, attackingDie1, attackingDie2, defendingDie);
 
@@ -34,6 +43,13 @@ public class TestGame {
     @Test
     public void shouldReturnTheIdleState() {
         assertThat(game.getCurrentState(), is(Game.gameState.idle));
+    }
+
+    @Test
+    public void firstPlayerAddedShouldStartTheGame() {
+        game.addPlayer(anders);
+        game.addPlayer(anna);
+        assertThat(game.getPlayerInTurn(),is(anders));
     }
 
     @Test
@@ -62,19 +78,17 @@ public class TestGame {
 
     @Test
     public void ifDefendingPlayerChoosesToDrinkFrom6And3AttackHeShouldDrink4Sips () {
-        game.addPlayer(anders);
-        game.addPlayer(anna);
+        game.addPlayer(bjarne); // Never rerolls
+        game.addPlayer(britta); // Never defends himself
         game.startGame();
         game.rollAttackingDice();
         game.decideWhetherToDrinkYourselfOrAttack();
         game.chosePlayerToAttack();
-        assertThat(game.getPlayerUnderAttack(),is(anna));
+        assertThat(game.getPlayerUnderAttack(),is(britta));
         game.onDecideIfAttackedPlayerShouldDefendHimself();
-       /*
-        game.gameFlow();
+        game.onRollDefendingDie();
+        game.onPunishLosingPlayer();
         assertThat(game.getSipsFromPlayerUnderAttack(),is(4));
-        */
-
     }
 }
 

@@ -9,7 +9,7 @@ import skejbydice.standard.strategies.NeverDefendYourselfStrategy;
 import skejbydice.standard.strategies.NeverRerollStrategy;
 
 public class BetaPlayerFactory implements PlayerFactoryI {
-    
+
     @Override
     public ChosePlayerStrategyI createChosePlayerStrategy() {
         return new ChosePlayerToTheLeftStrategy();
@@ -22,6 +22,6 @@ public class BetaPlayerFactory implements PlayerFactoryI {
 
     @Override
     public RerollOrAttackStrategyI createRerollOrAttackStrategy() {
-        return new NeverRerollStrategy;
+        return new NeverRerollStrategy();
     }
 }

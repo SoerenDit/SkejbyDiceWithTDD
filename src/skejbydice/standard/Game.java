@@ -10,6 +10,10 @@ public class Game {
     private int currentTurn;
     private int turnsToPlay;
 
+    public Player getPlayerInTurn() {
+        return playerManager.getCurrentPlayer();
+    }
+
     public enum gameState {
         idle,
         gameStarted,
