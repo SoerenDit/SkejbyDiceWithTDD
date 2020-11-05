@@ -57,9 +57,7 @@ public class TestGame {
         game.rollAttackingDice();
         assertThat(game.getSipsFromActivePlayer(),is(0));
         game.decideWhetherToDrinkYourselfOrAttack();
-        assertThat(game.getCurrentState(),is(Game.gameState.aboutToRollAttackingDice));
-        game.rollAttackingDice();
-        assertThat(game.getSipsFromActivePlayer(),is(4)); //Second time rolling 3+6 gives 5 sips away
+        assertThat(game.getSipsFromActivePlayer(),is(4)); 
     }
 
     @Test
