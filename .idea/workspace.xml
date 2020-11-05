@@ -20,31 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd625bfa-1d7d-4030-ade6-df6049d39369" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/PlayerFactoryI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/PlayerManagerI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/framework/PlayerManagerI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/ChosePlayerStrategyI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/DefenceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/framework/strategies/RerollOrAttackStrategyI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/DiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/DiceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/PlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/RegularDie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/skejbydice/standard/RegularDie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/strategies/ChosePlayerWithClickStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skejbydice/standard/strategies/RegularRerollOrAttackStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestAttackAndDefence.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestAttackAndDefence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/standard/TestPlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/AlphaPlayerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/factories/BetaPlayerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/AlwaysDefendYourselfStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/ChosePlayerToTheLeftStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/NeverDefendYourselfStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/NeverRerollStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/standard/strategies/RerollOnceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/skejbydice/view/TestSkejbyDiceGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,26 +231,26 @@
     </state>
     <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599050884237" />
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1599892495953" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604611832880">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom" timestamp="1604612371036">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604611832880">
+    <state width="1877" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604612371036" />
+    <state width="1877" height="233" key="GridCell.Tab.0.center" timestamp="1604612371036">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604611832880">
+    <state width="1877" height="233" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604612371036" />
+    <state width="1877" height="233" key="GridCell.Tab.0.left" timestamp="1604612371036">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604611832880">
+    <state width="1877" height="233" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604612371036" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right" timestamp="1604612371036">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1493" height="164" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599419583629" />
-    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604611832880" />
+    <state width="1877" height="233" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604612371036" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1597094034040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
