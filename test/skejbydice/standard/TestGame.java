@@ -62,12 +62,40 @@ public class TestGame {
     }
 
     @Test
+    public void rollingTwiceShouldRoundUpSipsAfterFirstRound() {
+        game.startGame();
+        game.rollAttackingDice();
+        assertThat(game.getAttackingValue(),is(4)); //First time rolling 3+6 gives 4 sips away
+        game.rollAttackingDice();
+        assertThat(game.getAttackingValue(),is(5)); //Second time rolling 3+6 gives 5 sips away
+        game.nextTurn();
+        game.rollAttackingDice();
+        assertThat(game.getAttackingValue(),is(4)); //First time rolling 3+6 gives 4 sips away
+        game.rollAttackingDice();
+        assertThat(game.getAttackingValue(),is(5)); //Second time rolling 3+6 gives 5 sips away
+    }
+
+    @Test
+    public void rollingTwiceShouldCauseAttackingPlayerToDrinkSipsAfterFirstRound() {
+        game.startGame();
+        game.rollAttackingDice();
+        assertThat(game.getSipsFromActivePlayer(),is(0));
+        game.rollAttackingDice();
+        assertThat(game.getSipsFromActivePlayer(),is(4));
+        game.nextTurn();
+        game.rollAttackingDice();
+        assertThat(game.getSipsFromActivePlayer(),is(0));
+        game.rollAttackingDice();
+        assertThat(game.getSipsFromActivePlayer(),is(4)); 
+    }
+
+    @Test
     public void rollingTwiceShouldCauseAttackingPlayerToDrinkSips() {
         game.startGame();
         game.rollAttackingDice();
         assertThat(game.getSipsFromActivePlayer(),is(0));
         game.rollAttackingDice();
-        assertThat(game.getSipsFromActivePlayer(),is(4)); 
+        assertThat(game.getSipsFromActivePlayer(),is(4));
     }
 
     @Test
@@ -81,13 +109,24 @@ public class TestGame {
     }
 
     @Test
-    public void ifDefendingPlayerFailsToDefendFromFrom6And3AttackHeShouldDrink5Sips () {
+    public void ifDefendingPlayerFailsToDefendFrom6And3AttackHeShouldDrink5Sips () {
         game.startGame();
         game.rollAttackingDice();
         game.attackPlayer(anna);
         game.tryToDefendYourself(); //fails
         game.punishLosingPlayer();
         assertThat(game.getSipsFromPlayerUnderAttack(),is(5));
+    }
+
+    @Test
+    public void ifDefendingPlayerFailsToDefendFrom6And3HisLuckyDieIsIncreaseBy1 () {
+        game.startGame();
+        game.rollAttackingDice();
+        game.attackPlayer(anna);
+        game.tryToDefendYourself(); //fails
+        game.punishLosingPlayer();
+        Player defender = game.getPlayerUnderAttack();
+        assertThat(defender.getLuckyDieNumber(),is(2));
     }
 
     @Test
@@ -102,7 +141,25 @@ public class TestGame {
         assertThat(game.getSipsFromPlayerUnderAttack(),is(0));
     }
 
+    @Test
+    public void shouldHandleTwoTurnsCorrectly() throws InvalidDieNumberException {
+        game.startGame();
+        game.rollAttackingDice();
+        game.attackPlayer(anna);
+        game.setDefenceDie(new RegularDie(new FixedNumberRollStrategy(6)));
+        game.tryToDefendYourself(); //succeds
+        game.punishLosingPlayer();
+        assertThat(game.getSipsFromActivePlayer(),is(1));
+        assertThat(game.getSipsFromPlayerUnderAttack(),is(0));
+        game.nextTurn();
+        game.rollAttackingDice();
+        game.attackPlayer(bjarne);
+        game.setDefenceDie(new RegularDie(new FixedNumberRollStrategy(1)));
+        game.punishLosingPlayer();
+        assertThat(game.getSipsFromActivePlayer(),is(0));
+        assertThat(game.getSipsFromPlayerUnderAttack(),is(4));
 
+    }
 
 }
 

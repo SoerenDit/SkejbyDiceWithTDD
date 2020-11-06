@@ -114,12 +114,16 @@ public class Game {
     }
 
     public void punishLosingPlayer() {
+        Player attacker = playerManager.getCurrentPlayer();
+        Player defender = playerManager.getPlayerUnderAttack();
+
         if(! diceManager.hasDefended()) {
-            playerManager.makePlayerDrink(playerManager.getPlayerUnderAttack(),diceManager.getNumberOfSipsToGiveAway());
+            playerManager.makePlayerDrink(defender,diceManager.getNumberOfSipsToGiveAway());
         } else if (diceManager.wasDefenceSuccesfull()) {
-            playerManager.makePlayerDrink(playerManager.getCurrentPlayer(),1);
-        } else {
-            playerManager.makePlayerDrink(playerManager.getPlayerUnderAttack(),diceManager.getNumberOfSipsToGiveAway()+1);
+            playerManager.makePlayerDrink(attacker,1);
+        } else { // Tried to defend but did not succed
+            playerManager.makePlayerDrink(defender,diceManager.getNumberOfSipsToGiveAway()+1);
+            defender.increaseLuckyDie();
         }
         currentState = gameState.playerHasBeenPunished;
     }
@@ -130,10 +134,15 @@ public class Game {
         if (currentTurn == turnsToPlay) {
             currentState = gameState.gameFinished;
         } else {
+            resetStuff();
             currentTurn++;
             playerManager.nextPlayer();
             currentState = gameState.turnStarted;
         }
+    }
+
+    private void resetStuff() {
+        diceManager.reset();
     }
 
     public void onGameFinished() {
@@ -173,10 +182,9 @@ public class Game {
         return activePlayer.getSips();
     }
 
-    public String getLuckyDieNumberFromActivePlayer() {
+    public int getLuckyDieNumberFromActivePlayer() {
         Player activePlayer = playerManager.getCurrentPlayer();
-
-        return "" + activePlayer.getLuckyDieNumber();
+        return activePlayer.getLuckyDieNumber();
     }
 
     public String getStatusText() {

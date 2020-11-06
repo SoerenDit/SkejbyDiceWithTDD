@@ -40,8 +40,12 @@ public class Player {
         return name;
     }
 
-    public String getLuckyDieNumber() {
-        return "" + luckyDie.getFaceUpNumber();
+    public int getLuckyDieNumber() {
+        return luckyDie.getFaceUpNumber();
+    }
+
+    public void increaseLuckyDie() {
+        luckyDie.increaseByOne();
     }
 
 }

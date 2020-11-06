@@ -51,4 +51,9 @@ public class DiceManager {
     public void setDefenceDie(DieI die) {
         defendingDie = die;
     }
+
+    public void reset() {
+        numberOfAttackRolls = 0;
+        hasDefended = false;
+    }
 }
