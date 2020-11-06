@@ -12,6 +12,7 @@ public class TestGame {
     private Game game;
     private Player anders;
     private Player anna;
+    private Player bjarne;
     private RegularDie attackingDie1;
     private RegularDie attackingDie2;
     private RegularDie defendingDie;
@@ -20,14 +21,15 @@ public class TestGame {
     public void setUp() throws InvalidDieNumberException {
         anders = new Player("Anders");
         anna = new Player("Anna");
-
+        bjarne = new Player("Bjarne");
         attackingDie1 = new RegularDie(new FixedNumberRollStrategy(3)); //Always rolls 3
         attackingDie2 = new RegularDie(new FixedNumberRollStrategy(6)); //Always rolls 6
         defendingDie = new RegularDie(new FixedNumberRollStrategy(3));
 
-        game = new Game(2, attackingDie1, attackingDie2, defendingDie);
+        game = new Game(10, attackingDie1, attackingDie2, defendingDie);
         game.addPlayer(anders);
         game.addPlayer(anna);
+        game.addPlayer(bjarne);
     }
 
     @Test
@@ -37,6 +39,16 @@ public class TestGame {
 
     @Test
     public void firstPlayerAddedShouldStartTheGame() {
+        assertThat(game.getPlayerInTurn(),is(anders));
+    }
+
+    @Test
+    public void activePlayterShouldSwitchWhenNewTurnBegins() {
+        game.nextTurn();
+        assertThat(game.getPlayerInTurn(),is(anna));
+        game.nextTurn();
+        assertThat(game.getPlayerInTurn(),is(bjarne));
+        game.nextTurn();
         assertThat(game.getPlayerInTurn(),is(anders));
     }
 
@@ -67,6 +79,31 @@ public class TestGame {
         game.punishLosingPlayer();
         assertThat(game.getSipsFromPlayerUnderAttack(),is(4));
     }
+
+    @Test
+    public void ifDefendingPlayerFailsToDefendFromFrom6And3AttackHeShouldDrink5Sips () {
+        game.startGame();
+        game.rollAttackingDice();
+        game.attackPlayer(anna);
+        game.tryToDefendYourself(); //fails
+        game.punishLosingPlayer();
+        assertThat(game.getSipsFromPlayerUnderAttack(),is(5));
+    }
+
+    @Test
+    public void ifDefendingPlacerSuccedsDefendingFrom6And3AttackAttackerShouldDrink1Sips() throws InvalidDieNumberException {
+        game.startGame();
+        game.rollAttackingDice();
+        game.attackPlayer(anna);
+        game.setDefenceDie(new RegularDie(new FixedNumberRollStrategy(6)));
+        game.tryToDefendYourself(); //succeds
+        game.punishLosingPlayer();
+        assertThat(game.getSipsFromActivePlayer(),is(1));
+        assertThat(game.getSipsFromPlayerUnderAttack(),is(0));
+    }
+
+
+
 }
 
 

@@ -1,17 +1,22 @@
 package skejbydice.standard;
 
+import skejbydice.framework.DieI;
+
 public class Game {
     private PlayerManager playerManager;
     private DiceManager diceManager;
     private gameState currentState;
     private String statusText;
     private boolean print = true; //Only for testing purposes
-    private int noOfSipsToLosingPlayer;
     private int currentTurn;
     private int turnsToPlay;
 
     public Player getPlayerInTurn() {
         return playerManager.getCurrentPlayer();
+    }
+
+    public void setDefenceDie(DieI die) {
+        diceManager.setDefenceDie(die);
     }
 
     public enum gameState {
@@ -20,9 +25,7 @@ public class Game {
         turnStarted,
         aboutToRollAttackingDice,
         attackingDiceRolled,
-        aboutToChosePlayerToAttack,
         playerHasBeenAttacked,
-        aboutToRollDefendingDie,
         playerIsDefending,
         playerHasBeenPunished,
         gameFinished
@@ -121,7 +124,7 @@ public class Game {
         currentState = gameState.playerHasBeenPunished;
     }
 
-    public void onStartNextPlayersTurn() {
+    public void nextTurn() {
         statusText = "Start next players turn";
         print(statusText);
         if (currentTurn == turnsToPlay) {
